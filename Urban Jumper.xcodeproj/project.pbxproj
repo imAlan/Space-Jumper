@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F3FE7C319F049AB00113256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C219F049AB00113256 /* AppDelegate.swift */; };
+		3F3FE7C519F049AB00113256 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C419F049AB00113256 /* GameScene.sks */; };
+		3F3FE7C719F049AB00113256 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C619F049AB00113256 /* GameScene.swift */; };
+		3F3FE7C919F049AB00113256 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C819F049AB00113256 /* GameViewController.swift */; };
+		3F3FE7CC19F049AB00113256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CA19F049AB00113256 /* Main.storyboard */; };
+		3F3FE7CE19F049AB00113256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CD19F049AB00113256 /* Images.xcassets */; };
+		3F3FE7D119F049AB00113256 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CF19F049AB00113256 /* LaunchScreen.xib */; };
+		3F3FE7DD19F049AB00113256 /* Urban_JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7DC19F049AB00113256 /* Urban_JumperTests.swift */; };
+		3F3FE7EB19F04B1300113256 /* Bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7E719F04B1300113256 /* Bird.png */; };
+		3F3FE7EC19F04B1300113256 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7E819F04B1300113256 /* ground.png */; };
+		3F3FE7ED19F04B1300113256 /* PipeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7E919F04B1300113256 /* PipeDown.png */; };
+		3F3FE7EE19F04B1300113256 /* PipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7EA19F04B1300113256 /* PipeUp.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F3FE7D719F049AB00113256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F3FE7B519F049AB00113256 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F3FE7BC19F049AB00113256;
+			remoteInfo = "Urban Jumper";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F3FE7BD19F049AB00113256 /* Urban Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Urban Jumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3FE7C119F049AB00113256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F3FE7C219F049AB00113256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F3FE7C419F049AB00113256 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3F3FE7C619F049AB00113256 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3F3FE7C819F049AB00113256 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3F3FE7CB19F049AB00113256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F3FE7CD19F049AB00113256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F3FE7D019F049AB00113256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3F3FE7D619F049AB00113256 /* Urban JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Urban JumperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3FE7DB19F049AB00113256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F3FE7DC19F049AB00113256 /* Urban_JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urban_JumperTests.swift; sourceTree = "<group>"; };
+		3F3FE7E719F04B1300113256 /* Bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird.png; sourceTree = "<group>"; };
+		3F3FE7E819F04B1300113256 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		3F3FE7E919F04B1300113256 /* PipeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeDown.png; sourceTree = "<group>"; };
+		3F3FE7EA19F04B1300113256 /* PipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeUp.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F3FE7BA19F049AB00113256 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F3FE7D319F049AB00113256 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F3FE7B419F049AB00113256 = {
+			isa = PBXGroup;
+			children = (
+				3F3FE7BF19F049AB00113256 /* Urban Jumper */,
+				3F3FE7D919F049AB00113256 /* Urban JumperTests */,
+				3F3FE7BE19F049AB00113256 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F3FE7BE19F049AB00113256 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FE7BD19F049AB00113256 /* Urban Jumper.app */,
+				3F3FE7D619F049AB00113256 /* Urban JumperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F3FE7BF19F049AB00113256 /* Urban Jumper */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FE7E619F04B1300113256 /* ImagesBird */,
+				3F3FE7C219F049AB00113256 /* AppDelegate.swift */,
+				3F3FE7C419F049AB00113256 /* GameScene.sks */,
+				3F3FE7C619F049AB00113256 /* GameScene.swift */,
+				3F3FE7C819F049AB00113256 /* GameViewController.swift */,
+				3F3FE7CA19F049AB00113256 /* Main.storyboard */,
+				3F3FE7CD19F049AB00113256 /* Images.xcassets */,
+				3F3FE7CF19F049AB00113256 /* LaunchScreen.xib */,
+				3F3FE7C019F049AB00113256 /* Supporting Files */,
+			);
+			path = "Urban Jumper";
+			sourceTree = "<group>";
+		};
+		3F3FE7C019F049AB00113256 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FE7C119F049AB00113256 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F3FE7D919F049AB00113256 /* Urban JumperTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FE7DC19F049AB00113256 /* Urban_JumperTests.swift */,
+				3F3FE7DA19F049AB00113256 /* Supporting Files */,
+			);
+			path = "Urban JumperTests";
+			sourceTree = "<group>";
+		};
+		3F3FE7DA19F049AB00113256 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FE7DB19F049AB00113256 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F3FE7E619F04B1300113256 /* ImagesBird */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FE7E719F04B1300113256 /* Bird.png */,
+				3F3FE7E819F04B1300113256 /* ground.png */,
+				3F3FE7E919F04B1300113256 /* PipeDown.png */,
+				3F3FE7EA19F04B1300113256 /* PipeUp.png */,
+			);
+			path = ImagesBird;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F3FE7BC19F049AB00113256 /* Urban Jumper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F3FE7E019F049AB00113256 /* Build configuration list for PBXNativeTarget "Urban Jumper" */;
+			buildPhases = (
+				3F3FE7B919F049AB00113256 /* Sources */,
+				3F3FE7BA19F049AB00113256 /* Frameworks */,
+				3F3FE7BB19F049AB00113256 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Urban Jumper";
+			productName = "Urban Jumper";
+			productReference = 3F3FE7BD19F049AB00113256 /* Urban Jumper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F3FE7D519F049AB00113256 /* Urban JumperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F3FE7E319F049AB00113256 /* Build configuration list for PBXNativeTarget "Urban JumperTests" */;
+			buildPhases = (
+				3F3FE7D219F049AB00113256 /* Sources */,
+				3F3FE7D319F049AB00113256 /* Frameworks */,
+				3F3FE7D419F049AB00113256 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F3FE7D819F049AB00113256 /* PBXTargetDependency */,
+			);
+			name = "Urban JumperTests";
+			productName = "Urban JumperTests";
+			productReference = 3F3FE7D619F049AB00113256 /* Urban JumperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F3FE7B519F049AB00113256 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Urban Games";
+				TargetAttributes = {
+					3F3FE7BC19F049AB00113256 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					3F3FE7D519F049AB00113256 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3F3FE7BC19F049AB00113256;
+					};
+				};
+			};
+			buildConfigurationList = 3F3FE7B819F049AB00113256 /* Build configuration list for PBXProject "Urban Jumper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F3FE7B419F049AB00113256;
+			productRefGroup = 3F3FE7BE19F049AB00113256 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F3FE7BC19F049AB00113256 /* Urban Jumper */,
+				3F3FE7D519F049AB00113256 /* Urban JumperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F3FE7BB19F049AB00113256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3FE7EE19F04B1300113256 /* PipeUp.png in Resources */,
+				3F3FE7EC19F04B1300113256 /* ground.png in Resources */,
+				3F3FE7D119F049AB00113256 /* LaunchScreen.xib in Resources */,
+				3F3FE7CE19F049AB00113256 /* Images.xcassets in Resources */,
+				3F3FE7EB19F04B1300113256 /* Bird.png in Resources */,
+				3F3FE7ED19F04B1300113256 /* PipeDown.png in Resources */,
+				3F3FE7C519F049AB00113256 /* GameScene.sks in Resources */,
+				3F3FE7CC19F049AB00113256 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F3FE7D419F049AB00113256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F3FE7B919F049AB00113256 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3FE7C719F049AB00113256 /* GameScene.swift in Sources */,
+				3F3FE7C919F049AB00113256 /* GameViewController.swift in Sources */,
+				3F3FE7C319F049AB00113256 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F3FE7D219F049AB00113256 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3FE7DD19F049AB00113256 /* Urban_JumperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F3FE7D819F049AB00113256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F3FE7BC19F049AB00113256 /* Urban Jumper */;
+			targetProxy = 3F3FE7D719F049AB00113256 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F3FE7CA19F049AB00113256 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F3FE7CB19F049AB00113256 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F3FE7CF19F049AB00113256 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F3FE7D019F049AB00113256 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F3FE7DE19F049AB00113256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F3FE7DF19F049AB00113256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F3FE7E119F049AB00113256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Urban Jumper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3F3FE7E219F049AB00113256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Urban Jumper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3F3FE7E419F049AB00113256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Urban JumperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Urban Jumper.app/Urban Jumper";
+			};
+			name = Debug;
+		};
+		3F3FE7E519F049AB00113256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Urban JumperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Urban Jumper.app/Urban Jumper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F3FE7B819F049AB00113256 /* Build configuration list for PBXProject "Urban Jumper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F3FE7DE19F049AB00113256 /* Debug */,
+				3F3FE7DF19F049AB00113256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F3FE7E019F049AB00113256 /* Build configuration list for PBXNativeTarget "Urban Jumper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F3FE7E119F049AB00113256 /* Debug */,
+				3F3FE7E219F049AB00113256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3F3FE7E319F049AB00113256 /* Build configuration list for PBXNativeTarget "Urban JumperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F3FE7E419F049AB00113256 /* Debug */,
+				3F3FE7E519F049AB00113256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F3FE7B519F049AB00113256 /* Project object */;
+}
