@@ -23,7 +23,7 @@ class GameScene: SKScene {
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
         
         //Bird
-        var JumperTexture = SKTexture(imageNamed: "Bird")
+        var JumperTexture = SKTexture(imageNamed: "Alien")
         JumperTexture.filteringMode = SKTextureFilteringMode.Nearest
         
         jumper = SKSpriteNode(texture: JumperTexture)
@@ -65,12 +65,10 @@ class GameScene: SKScene {
             
             let jump = SKAction()
             
-            if !jumper.actionForKey("jumping")
-            {
-                jumper.runAction(jump, withKey: "jumping")
-                jumper.physicsBody?.velocity = CGVectorMake(0, 0)
-                jumper.physicsBody?.applyImpulse(CGVectorMake(0, 25))
-            }
+
+            jumper.runAction(jump, withKey: "jumping")
+            jumper.physicsBody?.velocity = CGVectorMake(0, 0)
+            jumper.physicsBody?.applyImpulse(CGVectorMake(0, 25))
         }
     }
    

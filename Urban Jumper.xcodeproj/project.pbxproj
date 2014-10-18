@@ -15,10 +15,8 @@
 		3F3FE7CE19F049AB00113256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CD19F049AB00113256 /* Images.xcassets */; };
 		3F3FE7D119F049AB00113256 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CF19F049AB00113256 /* LaunchScreen.xib */; };
 		3F3FE7DD19F049AB00113256 /* Urban_JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7DC19F049AB00113256 /* Urban_JumperTests.swift */; };
-		3F3FE7EB19F04B1300113256 /* Bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7E719F04B1300113256 /* Bird.png */; };
 		3F3FE7EC19F04B1300113256 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7E819F04B1300113256 /* ground.png */; };
-		3F3FE7ED19F04B1300113256 /* PipeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7E919F04B1300113256 /* PipeDown.png */; };
-		3F3FE7EE19F04B1300113256 /* PipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7EA19F04B1300113256 /* PipeUp.png */; };
+		3F63B31219F312BC00BBC267 /* Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F63B31119F312BC00BBC267 /* Alien.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +42,8 @@
 		3F3FE7D619F049AB00113256 /* Urban JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Urban JumperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3FE7DB19F049AB00113256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F3FE7DC19F049AB00113256 /* Urban_JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urban_JumperTests.swift; sourceTree = "<group>"; };
-		3F3FE7E719F04B1300113256 /* Bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird.png; sourceTree = "<group>"; };
 		3F3FE7E819F04B1300113256 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
-		3F3FE7E919F04B1300113256 /* PipeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeDown.png; sourceTree = "<group>"; };
-		3F3FE7EA19F04B1300113256 /* PipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeUp.png; sourceTree = "<group>"; };
+		3F63B31119F312BC00BBC267 /* Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alien.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +85,7 @@
 		3F3FE7BF19F049AB00113256 /* Urban Jumper */ = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7E619F04B1300113256 /* ImagesBird */,
+				3F3FE7E619F04B1300113256 /* Static */,
 				3F3FE7C219F049AB00113256 /* AppDelegate.swift */,
 				3F3FE7C419F049AB00113256 /* GameScene.sks */,
 				3F3FE7C619F049AB00113256 /* GameScene.swift */,
@@ -127,14 +123,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3F3FE7E619F04B1300113256 /* ImagesBird */ = {
+		3F3FE7E619F04B1300113256 /* Static */ = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7E719F04B1300113256 /* Bird.png */,
+				3F63B31119F312BC00BBC267 /* Alien.png */,
 				3F3FE7E819F04B1300113256 /* ground.png */,
-				3F3FE7E919F04B1300113256 /* PipeDown.png */,
-				3F3FE7EA19F04B1300113256 /* PipeUp.png */,
 			);
+			name = Static;
 			path = ImagesBird;
 			sourceTree = "<group>";
 		};
@@ -218,12 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F3FE7EE19F04B1300113256 /* PipeUp.png in Resources */,
+				3F63B31219F312BC00BBC267 /* Alien.png in Resources */,
 				3F3FE7EC19F04B1300113256 /* ground.png in Resources */,
 				3F3FE7D119F049AB00113256 /* LaunchScreen.xib in Resources */,
 				3F3FE7CE19F049AB00113256 /* Images.xcassets in Resources */,
-				3F3FE7EB19F04B1300113256 /* Bird.png in Resources */,
-				3F3FE7ED19F04B1300113256 /* PipeDown.png in Resources */,
 				3F3FE7C519F049AB00113256 /* GameScene.sks in Resources */,
 				3F3FE7CC19F049AB00113256 /* Main.storyboard in Resources */,
 			);
@@ -437,6 +430,7 @@
 				3F3FE7E219F049AB00113256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F3FE7E319F049AB00113256 /* Build configuration list for PBXNativeTarget "Urban JumperTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +439,7 @@
 				3F3FE7E519F049AB00113256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
