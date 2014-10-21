@@ -11,13 +11,16 @@ import SpriteKit
 class GameScene: SKScene {
     
     var jumper = SKSpriteNode()
-    var building = SKNode()
+    var building = SKSpriteNode()
     enum ColliderType: UInt32{
         case jumper = 1
         case building = 2
     }
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        //Background
+        var space = SKSpriteNode(imageNamed: "space.jpg")
+        self.addChild(space)
         
         //Physics
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
@@ -39,21 +42,25 @@ class GameScene: SKScene {
         
         self.addChild(jumper)
         
-        //Ground
+        //Home
         
-        var buildingTexture = SKTexture(imageNamed: "ground")
+        var buildingTexture = SKTexture(imageNamed: "home")
         
         var sprite = SKSpriteNode(texture: buildingTexture)
-        sprite.setScale(2.0)
-        sprite.position = CGPointMake(self.size.width/4, sprite.size.height/2)
+        
+        sprite.position = CGPointMake(self.size.width/4, 4/3 * sprite.size.height/2)
+        sprite.setScale(0.75)
         self.addChild(sprite)
         
-        building.position = CGPointMake(0, buildingTexture.size().height)
-        building.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, buildingTexture.size().height * 2.0))
+        
+        building.position = CGPointMake(0, 1.1 * buildingTexture.size().height/2)
+        
+        building.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width * 1.0, buildingTexture.size().height * 1.0))
         building.physicsBody?.dynamic = false
         building.physicsBody?.categoryBitMask = ColliderType.building.rawValue
         building.physicsBody?.contactTestBitMask = ColliderType.jumper.rawValue
         building.physicsBody?.collisionBitMask = ColliderType.jumper.rawValue
+
         self.addChild(building)
     }
     

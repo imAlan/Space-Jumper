@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F21C23919F6C95C00F259BA /* space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F21C23819F6C95C00F259BA /* space.jpg */; };
+		3F2C252E19F4CF61005DC305 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2C252D19F4CF61005DC305 /* home.png */; };
 		3F3FE7C319F049AB00113256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C219F049AB00113256 /* AppDelegate.swift */; };
 		3F3FE7C519F049AB00113256 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C419F049AB00113256 /* GameScene.sks */; };
 		3F3FE7C719F049AB00113256 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C619F049AB00113256 /* GameScene.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F21C23819F6C95C00F259BA /* space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space.jpg; sourceTree = "<group>"; };
+		3F2C252D19F4CF61005DC305 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		3F3FE7BD19F049AB00113256 /* Urban Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Urban Jumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3FE7C119F049AB00113256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F3FE7C219F049AB00113256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		3F3FE7E619F04B1300113256 /* Static */ = {
 			isa = PBXGroup;
 			children = (
+				3F21C23819F6C95C00F259BA /* space.jpg */,
+				3F2C252D19F4CF61005DC305 /* home.png */,
 				3F63B31119F312BC00BBC267 /* Alien.png */,
 				3F3FE7E819F04B1300113256 /* ground.png */,
 			);
@@ -215,7 +221,9 @@
 			files = (
 				3F63B31219F312BC00BBC267 /* Alien.png in Resources */,
 				3F3FE7EC19F04B1300113256 /* ground.png in Resources */,
+				3F2C252E19F4CF61005DC305 /* home.png in Resources */,
 				3F3FE7D119F049AB00113256 /* LaunchScreen.xib in Resources */,
+				3F21C23919F6C95C00F259BA /* space.jpg in Resources */,
 				3F3FE7CE19F049AB00113256 /* Images.xcassets in Resources */,
 				3F3FE7C519F049AB00113256 /* GameScene.sks in Resources */,
 				3F3FE7CC19F049AB00113256 /* Main.storyboard in Resources */,

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Urban Jumper/GameScene.swift"
-            timestampString = "435181914.093037"
+            timestampString = "435603879.75085"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "didMoveToView(_:)"
             landmarkType = "5">
          </BreakpointContent>
