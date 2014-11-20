@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F3FE7BC19F049AB00113256"
-               BuildableName = "Urban Jumper.app"
+               BlueprintIdentifier = "3FACC6351A1E8CC6005A8C66"
+               BuildableName = "Space Jumper.app"
                BlueprintName = "Space Jumper"
                ReferencedContainer = "container:Space Jumper.xcodeproj">
             </BuildableReference>
@@ -28,8 +28,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F3FE7D519F049AB00113256"
-               BuildableName = "Urban JumperTests.xctest"
+               BlueprintIdentifier = "3FACC64E1A1E8CC6005A8C66"
+               BuildableName = "Space JumperTests.xctest"
                BlueprintName = "Space JumperTests"
                ReferencedContainer = "container:Space Jumper.xcodeproj">
             </BuildableReference>
@@ -46,8 +46,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F3FE7D519F049AB00113256"
-               BuildableName = "Urban JumperTests.xctest"
+               BlueprintIdentifier = "3FACC64E1A1E8CC6005A8C66"
+               BuildableName = "Space JumperTests.xctest"
                BlueprintName = "Space JumperTests"
                ReferencedContainer = "container:Space Jumper.xcodeproj">
             </BuildableReference>
@@ -56,8 +56,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3F3FE7BC19F049AB00113256"
-            BuildableName = "Urban Jumper.app"
+            BlueprintIdentifier = "3FACC6351A1E8CC6005A8C66"
+            BuildableName = "Space Jumper.app"
             BlueprintName = "Space Jumper"
             ReferencedContainer = "container:Space Jumper.xcodeproj">
          </BuildableReference>
@@ -75,8 +75,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3F3FE7BC19F049AB00113256"
-            BuildableName = "Urban Jumper.app"
+            BlueprintIdentifier = "3FACC6351A1E8CC6005A8C66"
+            BuildableName = "Space Jumper.app"
             BlueprintName = "Space Jumper"
             ReferencedContainer = "container:Space Jumper.xcodeproj">
          </BuildableReference>
@@ -93,8 +93,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3F3FE7BC19F049AB00113256"
-            BuildableName = "Urban Jumper.app"
+            BlueprintIdentifier = "3FACC6351A1E8CC6005A8C66"
+            BuildableName = "Space Jumper.app"
             BlueprintName = "Space Jumper"
             ReferencedContainer = "container:Space Jumper.xcodeproj">
          </BuildableReference>
