@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Urban Jumper
+//  Space Jumper
 //
-//  Created by Alan Chen on 10/16/14.
+//  Created by Alan Chen on 11/20/14.
 //  Copyright (c) 2014 Urban Games. All rights reserved.
 //
 

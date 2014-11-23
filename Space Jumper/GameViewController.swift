@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  Urban Jumper
+//  Space Jumper
 //
-//  Created by Alan Chen on 10/16/14.
+//  Created by Alan Chen on 11/20/14.
 //  Copyright (c) 2014 Urban Games. All rights reserved.
 //
 
@@ -26,15 +26,18 @@ extension SKNode {
 }
 
 class GameViewController: UIViewController {
-
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
             let skView = self.view as SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
+            
+            scene.scoreLabel = self.scoreLabel
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true

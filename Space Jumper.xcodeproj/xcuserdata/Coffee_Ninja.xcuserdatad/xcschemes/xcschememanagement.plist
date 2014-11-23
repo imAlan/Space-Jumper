@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Urban Jumper.xcscheme</key>
+		<key>Space Jumper.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3F3FE7BC19F049AB00113256</key>
+		<key>3FACC6351A1E8CC6005A8C66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F3FE7D519F049AB00113256</key>
+		<key>3FACC64E1A1E8CC6005A8C66</key>
 		<dict>
 			<key>primary</key>
 			<true/>

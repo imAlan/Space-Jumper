@@ -1,15 +1,15 @@
 //
-//  Urban_JumperTests.swift
-//  Urban JumperTests
+//  Space_JumperTests.swift
+//  Space JumperTests
 //
-//  Created by Alan Chen on 10/16/14.
+//  Created by Alan Chen on 11/20/14.
 //  Copyright (c) 2014 Urban Games. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class Urban_JumperTests: XCTestCase {
+class Space_JumperTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

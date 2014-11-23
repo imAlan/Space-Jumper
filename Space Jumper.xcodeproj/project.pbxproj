@@ -7,56 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F21C23919F6C95C00F259BA /* Space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F21C23819F6C95C00F259BA /* Space.jpg */; };
-		3F2C252E19F4CF61005DC305 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2C252D19F4CF61005DC305 /* Home.png */; };
-		3F3FE7C319F049AB00113256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C219F049AB00113256 /* AppDelegate.swift */; };
-		3F3FE7C519F049AB00113256 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C419F049AB00113256 /* GameScene.sks */; };
-		3F3FE7C719F049AB00113256 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C619F049AB00113256 /* GameScene.swift */; };
-		3F3FE7C919F049AB00113256 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7C819F049AB00113256 /* GameViewController.swift */; };
-		3F3FE7CC19F049AB00113256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CA19F049AB00113256 /* Main.storyboard */; };
-		3F3FE7CE19F049AB00113256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CD19F049AB00113256 /* Images.xcassets */; };
-		3F3FE7D119F049AB00113256 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FE7CF19F049AB00113256 /* LaunchScreen.xib */; };
-		3F3FE7DD19F049AB00113256 /* Space_JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FE7DC19F049AB00113256 /* Space_JumperTests.swift */; };
-		3F63B31219F312BC00BBC267 /* Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F63B31119F312BC00BBC267 /* Alien.png */; };
+		3FACC63C1A1E8CC6005A8C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */; };
+		3FACC63E1A1E8CC6005A8C66 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC63D1A1E8CC6005A8C66 /* GameScene.sks */; };
+		3FACC6401A1E8CC6005A8C66 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */; };
+		3FACC6421A1E8CC6005A8C66 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC6411A1E8CC6005A8C66 /* GameViewController.swift */; };
+		3FACC6451A1E8CC6005A8C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6431A1E8CC6005A8C66 /* Main.storyboard */; };
+		3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6461A1E8CC6005A8C66 /* Images.xcassets */; };
+		3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */; };
+		3FACC6561A1E8CC6005A8C66 /* Space_JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */; };
+		3FACC6641A1E8D5A005A8C66 /* Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6601A1E8D5A005A8C66 /* Alien.png */; };
+		3FACC6651A1E8D5A005A8C66 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6611A1E8D5A005A8C66 /* Home.png */; };
+		3FACC6661A1E8D5A005A8C66 /* metorite_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6621A1E8D5A005A8C66 /* metorite_1.png */; };
+		3FACC6671A1E8D5A005A8C66 /* Space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6631A1E8D5A005A8C66 /* Space.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3F3FE7D719F049AB00113256 /* PBXContainerItemProxy */ = {
+		3FACC6501A1E8CC6005A8C66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3F3FE7B519F049AB00113256 /* Project object */;
+			containerPortal = 3FACC62E1A1E8CC6005A8C66 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3F3FE7BC19F049AB00113256;
-			remoteInfo = "Urban Jumper";
+			remoteGlobalIDString = 3FACC6351A1E8CC6005A8C66;
+			remoteInfo = "Space Jumper";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F21C23819F6C95C00F259BA /* Space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space.jpg; sourceTree = "<group>"; };
-		3F2C252D19F4CF61005DC305 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
-		3F3FE7BD19F049AB00113256 /* Space Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Jumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3FE7C119F049AB00113256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F3FE7C219F049AB00113256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F3FE7C419F049AB00113256 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		3F3FE7C619F049AB00113256 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		3F3FE7C819F049AB00113256 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		3F3FE7CB19F049AB00113256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3F3FE7CD19F049AB00113256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3F3FE7D019F049AB00113256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3F3FE7D619F049AB00113256 /* Space JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space JumperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3FE7DB19F049AB00113256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F3FE7DC19F049AB00113256 /* Space_JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_JumperTests.swift; sourceTree = "<group>"; };
-		3F63B31119F312BC00BBC267 /* Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alien.png; sourceTree = "<group>"; };
+		3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Jumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FACC63A1A1E8CC6005A8C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FACC63D1A1E8CC6005A8C66 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3FACC6411A1E8CC6005A8C66 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3FACC6441A1E8CC6005A8C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FACC6461A1E8CC6005A8C66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3FACC6491A1E8CC6005A8C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space JumperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FACC6541A1E8CC6005A8C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_JumperTests.swift; sourceTree = "<group>"; };
+		3FACC6601A1E8D5A005A8C66 /* Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alien.png; sourceTree = "<group>"; };
+		3FACC6611A1E8D5A005A8C66 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
+		3FACC6621A1E8D5A005A8C66 /* metorite_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metorite_1.png; sourceTree = "<group>"; };
+		3FACC6631A1E8D5A005A8C66 /* Space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3F3FE7BA19F049AB00113256 /* Frameworks */ = {
+		3FACC6331A1E8CC6005A8C66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F3FE7D319F049AB00113256 /* Frameworks */ = {
+		3FACC64C1A1E8CC6005A8C66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,135 +68,133 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F3FE7B419F049AB00113256 = {
+		3FACC62D1A1E8CC6005A8C66 = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7BF19F049AB00113256 /* Space Jumper */,
-				3F3FE7D919F049AB00113256 /* Space JumperTests */,
-				3F3FE7BE19F049AB00113256 /* Products */,
+				3FACC6381A1E8CC6005A8C66 /* Space Jumper */,
+				3FACC6521A1E8CC6005A8C66 /* Space JumperTests */,
+				3FACC6371A1E8CC6005A8C66 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3F3FE7BE19F049AB00113256 /* Products */ = {
+		3FACC6371A1E8CC6005A8C66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7BD19F049AB00113256 /* Space Jumper.app */,
-				3F3FE7D619F049AB00113256 /* Space JumperTests.xctest */,
+				3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */,
+				3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F3FE7BF19F049AB00113256 /* Space Jumper */ = {
+		3FACC6381A1E8CC6005A8C66 /* Space Jumper */ = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7E619F04B1300113256 /* Static */,
-				3F3FE7C219F049AB00113256 /* AppDelegate.swift */,
-				3F3FE7C419F049AB00113256 /* GameScene.sks */,
-				3F3FE7C619F049AB00113256 /* GameScene.swift */,
-				3F3FE7C819F049AB00113256 /* GameViewController.swift */,
-				3F3FE7CA19F049AB00113256 /* Main.storyboard */,
-				3F3FE7CD19F049AB00113256 /* Images.xcassets */,
-				3F3FE7CF19F049AB00113256 /* LaunchScreen.xib */,
-				3F3FE7C019F049AB00113256 /* Supporting Files */,
+				3FACC65F1A1E8D5A005A8C66 /* Images */,
+				3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */,
+				3FACC63D1A1E8CC6005A8C66 /* GameScene.sks */,
+				3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */,
+				3FACC6411A1E8CC6005A8C66 /* GameViewController.swift */,
+				3FACC6431A1E8CC6005A8C66 /* Main.storyboard */,
+				3FACC6461A1E8CC6005A8C66 /* Images.xcassets */,
+				3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */,
+				3FACC6391A1E8CC6005A8C66 /* Supporting Files */,
 			);
-			name = "Space Jumper";
-			path = "Urban Jumper";
+			path = "Space Jumper";
 			sourceTree = "<group>";
 		};
-		3F3FE7C019F049AB00113256 /* Supporting Files */ = {
+		3FACC6391A1E8CC6005A8C66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7C119F049AB00113256 /* Info.plist */,
+				3FACC63A1A1E8CC6005A8C66 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3F3FE7D919F049AB00113256 /* Space JumperTests */ = {
+		3FACC6521A1E8CC6005A8C66 /* Space JumperTests */ = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7DC19F049AB00113256 /* Space_JumperTests.swift */,
-				3F3FE7DA19F049AB00113256 /* Supporting Files */,
+				3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */,
+				3FACC6531A1E8CC6005A8C66 /* Supporting Files */,
 			);
-			name = "Space JumperTests";
-			path = "Urban JumperTests";
+			path = "Space JumperTests";
 			sourceTree = "<group>";
 		};
-		3F3FE7DA19F049AB00113256 /* Supporting Files */ = {
+		3FACC6531A1E8CC6005A8C66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3F3FE7DB19F049AB00113256 /* Info.plist */,
+				3FACC6541A1E8CC6005A8C66 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3F3FE7E619F04B1300113256 /* Static */ = {
+		3FACC65F1A1E8D5A005A8C66 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3F21C23819F6C95C00F259BA /* Space.jpg */,
-				3F2C252D19F4CF61005DC305 /* Home.png */,
-				3F63B31119F312BC00BBC267 /* Alien.png */,
+				3FACC6601A1E8D5A005A8C66 /* Alien.png */,
+				3FACC6611A1E8D5A005A8C66 /* Home.png */,
+				3FACC6621A1E8D5A005A8C66 /* metorite_1.png */,
+				3FACC6631A1E8D5A005A8C66 /* Space.jpg */,
 			);
-			name = Static;
 			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F3FE7BC19F049AB00113256 /* Space Jumper */ = {
+		3FACC6351A1E8CC6005A8C66 /* Space Jumper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F3FE7E019F049AB00113256 /* Build configuration list for PBXNativeTarget "Space Jumper" */;
+			buildConfigurationList = 3FACC6591A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space Jumper" */;
 			buildPhases = (
-				3F3FE7B919F049AB00113256 /* Sources */,
-				3F3FE7BA19F049AB00113256 /* Frameworks */,
-				3F3FE7BB19F049AB00113256 /* Resources */,
+				3FACC6321A1E8CC6005A8C66 /* Sources */,
+				3FACC6331A1E8CC6005A8C66 /* Frameworks */,
+				3FACC6341A1E8CC6005A8C66 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Space Jumper";
-			productName = "Urban Jumper";
-			productReference = 3F3FE7BD19F049AB00113256 /* Space Jumper.app */;
+			productName = "Space Jumper";
+			productReference = 3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F3FE7D519F049AB00113256 /* Space JumperTests */ = {
+		3FACC64E1A1E8CC6005A8C66 /* Space JumperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F3FE7E319F049AB00113256 /* Build configuration list for PBXNativeTarget "Space JumperTests" */;
+			buildConfigurationList = 3FACC65C1A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space JumperTests" */;
 			buildPhases = (
-				3F3FE7D219F049AB00113256 /* Sources */,
-				3F3FE7D319F049AB00113256 /* Frameworks */,
-				3F3FE7D419F049AB00113256 /* Resources */,
+				3FACC64B1A1E8CC6005A8C66 /* Sources */,
+				3FACC64C1A1E8CC6005A8C66 /* Frameworks */,
+				3FACC64D1A1E8CC6005A8C66 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3F3FE7D819F049AB00113256 /* PBXTargetDependency */,
+				3FACC6511A1E8CC6005A8C66 /* PBXTargetDependency */,
 			);
 			name = "Space JumperTests";
-			productName = "Urban JumperTests";
-			productReference = 3F3FE7D619F049AB00113256 /* Space JumperTests.xctest */;
+			productName = "Space JumperTests";
+			productReference = 3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3F3FE7B519F049AB00113256 /* Project object */ = {
+		3FACC62E1A1E8CC6005A8C66 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Urban Games";
 				TargetAttributes = {
-					3F3FE7BC19F049AB00113256 = {
+					3FACC6351A1E8CC6005A8C66 = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					3F3FE7D519F049AB00113256 = {
+					3FACC64E1A1E8CC6005A8C66 = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 3F3FE7BC19F049AB00113256;
+						TestTargetID = 3FACC6351A1E8CC6005A8C66;
 					};
 				};
 			};
-			buildConfigurationList = 3F3FE7B819F049AB00113256 /* Build configuration list for PBXProject "Space Jumper" */;
+			buildConfigurationList = 3FACC6311A1E8CC6005A8C66 /* Build configuration list for PBXProject "Space Jumper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -202,33 +202,34 @@
 				en,
 				Base,
 			);
-			mainGroup = 3F3FE7B419F049AB00113256;
-			productRefGroup = 3F3FE7BE19F049AB00113256 /* Products */;
+			mainGroup = 3FACC62D1A1E8CC6005A8C66;
+			productRefGroup = 3FACC6371A1E8CC6005A8C66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F3FE7BC19F049AB00113256 /* Space Jumper */,
-				3F3FE7D519F049AB00113256 /* Space JumperTests */,
+				3FACC6351A1E8CC6005A8C66 /* Space Jumper */,
+				3FACC64E1A1E8CC6005A8C66 /* Space JumperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3F3FE7BB19F049AB00113256 /* Resources */ = {
+		3FACC6341A1E8CC6005A8C66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F63B31219F312BC00BBC267 /* Alien.png in Resources */,
-				3F2C252E19F4CF61005DC305 /* Home.png in Resources */,
-				3F3FE7D119F049AB00113256 /* LaunchScreen.xib in Resources */,
-				3F21C23919F6C95C00F259BA /* Space.jpg in Resources */,
-				3F3FE7CE19F049AB00113256 /* Images.xcassets in Resources */,
-				3F3FE7C519F049AB00113256 /* GameScene.sks in Resources */,
-				3F3FE7CC19F049AB00113256 /* Main.storyboard in Resources */,
+				3FACC6651A1E8D5A005A8C66 /* Home.png in Resources */,
+				3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */,
+				3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */,
+				3FACC6661A1E8D5A005A8C66 /* metorite_1.png in Resources */,
+				3FACC6671A1E8D5A005A8C66 /* Space.jpg in Resources */,
+				3FACC63E1A1E8CC6005A8C66 /* GameScene.sks in Resources */,
+				3FACC6451A1E8CC6005A8C66 /* Main.storyboard in Resources */,
+				3FACC6641A1E8D5A005A8C66 /* Alien.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F3FE7D419F049AB00113256 /* Resources */ = {
+		3FACC64D1A1E8CC6005A8C66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,47 +239,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3F3FE7B919F049AB00113256 /* Sources */ = {
+		3FACC6321A1E8CC6005A8C66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F3FE7C719F049AB00113256 /* GameScene.swift in Sources */,
-				3F3FE7C919F049AB00113256 /* GameViewController.swift in Sources */,
-				3F3FE7C319F049AB00113256 /* AppDelegate.swift in Sources */,
+				3FACC6401A1E8CC6005A8C66 /* GameScene.swift in Sources */,
+				3FACC6421A1E8CC6005A8C66 /* GameViewController.swift in Sources */,
+				3FACC63C1A1E8CC6005A8C66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F3FE7D219F049AB00113256 /* Sources */ = {
+		3FACC64B1A1E8CC6005A8C66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F3FE7DD19F049AB00113256 /* Space_JumperTests.swift in Sources */,
+				3FACC6561A1E8CC6005A8C66 /* Space_JumperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F3FE7D819F049AB00113256 /* PBXTargetDependency */ = {
+		3FACC6511A1E8CC6005A8C66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F3FE7BC19F049AB00113256 /* Space Jumper */;
-			targetProxy = 3F3FE7D719F049AB00113256 /* PBXContainerItemProxy */;
+			target = 3FACC6351A1E8CC6005A8C66 /* Space Jumper */;
+			targetProxy = 3FACC6501A1E8CC6005A8C66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3F3FE7CA19F049AB00113256 /* Main.storyboard */ = {
+		3FACC6431A1E8CC6005A8C66 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3F3FE7CB19F049AB00113256 /* Base */,
+				3FACC6441A1E8CC6005A8C66 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		3F3FE7CF19F049AB00113256 /* LaunchScreen.xib */ = {
+		3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3F3FE7D019F049AB00113256 /* Base */,
+				3FACC6491A1E8CC6005A8C66 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -286,7 +287,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3F3FE7DE19F049AB00113256 /* Debug */ = {
+		3FACC6571A1E8CC6005A8C66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -328,7 +329,7 @@
 			};
 			name = Debug;
 		};
-		3F3FE7DF19F049AB00113256 /* Release */ = {
+		3FACC6581A1E8CC6005A8C66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -363,27 +364,27 @@
 			};
 			name = Release;
 		};
-		3F3FE7E119F049AB00113256 /* Debug */ = {
+		3FACC65A1A1E8CC6005A8C66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Urban Jumper/Info.plist";
+				INFOPLIST_FILE = "Space Jumper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Space Jumper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		3F3FE7E219F049AB00113256 /* Release */ = {
+		3FACC65B1A1E8CC6005A8C66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Urban Jumper/Info.plist";
+				INFOPLIST_FILE = "Space Jumper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Space Jumper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		3F3FE7E419F049AB00113256 /* Debug */ = {
+		3FACC65D1A1E8CC6005A8C66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -395,14 +396,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Urban JumperTests/Info.plist";
+				INFOPLIST_FILE = "Space JumperTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Space JumperTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Urban Jumper.app/Urban Jumper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Jumper.app/Space Jumper";
 			};
 			name = Debug;
 		};
-		3F3FE7E519F049AB00113256 /* Release */ = {
+		3FACC65E1A1E8CC6005A8C66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -410,44 +411,42 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Urban JumperTests/Info.plist";
+				INFOPLIST_FILE = "Space JumperTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Space JumperTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Urban Jumper.app/Urban Jumper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Jumper.app/Space Jumper";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F3FE7B819F049AB00113256 /* Build configuration list for PBXProject "Space Jumper" */ = {
+		3FACC6311A1E8CC6005A8C66 /* Build configuration list for PBXProject "Space Jumper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F3FE7DE19F049AB00113256 /* Debug */,
-				3F3FE7DF19F049AB00113256 /* Release */,
+				3FACC6571A1E8CC6005A8C66 /* Debug */,
+				3FACC6581A1E8CC6005A8C66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F3FE7E019F049AB00113256 /* Build configuration list for PBXNativeTarget "Space Jumper" */ = {
+		3FACC6591A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space Jumper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F3FE7E119F049AB00113256 /* Debug */,
-				3F3FE7E219F049AB00113256 /* Release */,
+				3FACC65A1A1E8CC6005A8C66 /* Debug */,
+				3FACC65B1A1E8CC6005A8C66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		3F3FE7E319F049AB00113256 /* Build configuration list for PBXNativeTarget "Space JumperTests" */ = {
+		3FACC65C1A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space JumperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F3FE7E419F049AB00113256 /* Debug */,
-				3F3FE7E519F049AB00113256 /* Release */,
+				3FACC65D1A1E8CC6005A8C66 /* Debug */,
+				3FACC65E1A1E8CC6005A8C66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3F3FE7B519F049AB00113256 /* Project object */;
+	rootObject = 3FACC62E1A1E8CC6005A8C66 /* Project object */;
 }
