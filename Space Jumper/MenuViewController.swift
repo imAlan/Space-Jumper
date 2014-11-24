@@ -1,21 +1,19 @@
 //
-//  GameOverViewController.swift
+//  MenuViewController.swift
 //  Space Jumper
 //
-//  Created by George on 11/22/14.
+//  Created by George on 11/23/14.
 //  Copyright (c) 2014 Urban Games. All rights reserved.
 //
 
 import UIKit
 
-class GameOverViewController: UIViewController {
-    @IBOutlet weak var scoreLabel: UILabel!
-    var scoreLabelText:String?
+class MenuViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        scoreLabel.text = scoreLabelText
         var patternImage:UIImage = UIImage(named: "Space.jpg")!
         self.view.backgroundColor = UIColor(patternImage: patternImage)
     }

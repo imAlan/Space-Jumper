@@ -92,6 +92,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(contact.bodyA.node!.name! == "meteor" && contact.bodyB.node!.name! == "jumper")
         {
             // Game Over
+            self.paused = true
             self.gameViewController.gameOver(self)
         }
     }
