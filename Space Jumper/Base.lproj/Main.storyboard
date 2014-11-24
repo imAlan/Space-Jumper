@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AsX-4Y-bbJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QAG-tE-eK7">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf5-Gs-cG6">
-                                <rect key="frame" x="504" y="36" width="64" height="20.5"/>
+                                <rect key="frame" x="504" y="36" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -68,16 +68,17 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="Yf5-Gs-cG6" id="ESp-GT-h6U"/>
+                        <segue destination="QAG-tE-eK7" kind="showDetail" identifier="GameSceneToGameOver" id="8rd-Lw-7R7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="549" y="-82"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Over View Controller-->
         <scene sceneID="hXm-fm-qfO">
             <objects>
-                <viewController id="QAG-tE-eK7" sceneMemberID="viewController">
+                <viewController id="QAG-tE-eK7" customClass="GameOverViewController" customModule="Space_Jumper" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qQb-Fl-Dej"/>
                         <viewControllerLayoutGuide type="bottom" id="gDG-yg-VwQ"/>
@@ -89,14 +90,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2R-Ve-H8N">
                                 <rect key="frame" x="180" y="90" width="240" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K89-ZQ-E58">
-                                        <rect key="frame" x="88" y="29" width="64" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypv-Vn-CIO">
+                                        <rect key="frame" x="74" y="70" width="92" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypv-Vn-CIO">
-                                        <rect key="frame" x="74" y="70" width="92" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K89-ZQ-E58">
+                                        <rect key="frame" x="88" y="30" width="64" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -104,9 +105,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="K89-ZQ-E58" secondAttribute="centerX" id="3DX-Jd-sy4"/>
                                     <constraint firstAttribute="centerX" secondItem="Ypv-Vn-CIO" secondAttribute="centerX" id="BAh-mi-S2E"/>
-                                    <constraint firstAttribute="centerY" secondItem="K89-ZQ-E58" secondAttribute="centerY" multiplier="1.5" id="V9O-b9-XfD"/>
-                                    <constraint firstAttribute="centerX" secondItem="K89-ZQ-E58" secondAttribute="centerX" id="hoe-8u-q3y"/>
+                                    <constraint firstAttribute="centerY" secondItem="K89-ZQ-E58" secondAttribute="centerY" multiplier="1.5" id="rrQ-IW-y8j"/>
                                     <constraint firstAttribute="centerY" secondItem="Ypv-Vn-CIO" secondAttribute="centerY" multiplier="0.75" id="vl9-kZ-g0S"/>
                                 </constraints>
                             </view>
@@ -159,10 +160,13 @@
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="K89-ZQ-E58" id="fJq-Jk-TMO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUJ-r1-aJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1219" y="-74"/>
+            <point key="canvasLocation" x="1242" y="-82"/>
         </scene>
     </scenes>
 </document>

@@ -19,6 +19,8 @@
 		3FACC6651A1E8D5A005A8C66 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6611A1E8D5A005A8C66 /* Home.png */; };
 		3FACC6661A1E8D5A005A8C66 /* metorite_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6621A1E8D5A005A8C66 /* metorite_1.png */; };
 		3FACC6671A1E8D5A005A8C66 /* Space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6631A1E8D5A005A8C66 /* Space.jpg */; };
+		5E6DC54E1A21A4AF007880E9 /* Space2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DC54D1A21A4AF007880E9 /* Space2.jpg */; };
+		5E71B1541A21B0740042323A /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E71B1531A21B0740042323A /* GameOverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		3FACC6611A1E8D5A005A8C66 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
 		3FACC6621A1E8D5A005A8C66 /* metorite_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metorite_1.png; sourceTree = "<group>"; };
 		3FACC6631A1E8D5A005A8C66 /* Space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space.jpg; sourceTree = "<group>"; };
+		5E6DC54D1A21A4AF007880E9 /* Space2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space2.jpg; sourceTree = "<group>"; };
+		5E71B1531A21B0740042323A /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */,
 				3FACC6411A1E8CC6005A8C66 /* GameViewController.swift */,
 				3FACC6431A1E8CC6005A8C66 /* Main.storyboard */,
+				5E71B1531A21B0740042323A /* GameOverViewController.swift */,
 				3FACC6461A1E8CC6005A8C66 /* Images.xcassets */,
 				3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */,
 				3FACC6391A1E8CC6005A8C66 /* Supporting Files */,
@@ -130,6 +135,7 @@
 		3FACC65F1A1E8D5A005A8C66 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5E6DC54D1A21A4AF007880E9 /* Space2.jpg */,
 				3FACC6601A1E8D5A005A8C66 /* Alien.png */,
 				3FACC6611A1E8D5A005A8C66 /* Home.png */,
 				3FACC6621A1E8D5A005A8C66 /* metorite_1.png */,
@@ -220,6 +226,7 @@
 			files = (
 				3FACC6651A1E8D5A005A8C66 /* Home.png in Resources */,
 				3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */,
+				5E6DC54E1A21A4AF007880E9 /* Space2.jpg in Resources */,
 				3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */,
 				3FACC6661A1E8D5A005A8C66 /* metorite_1.png in Resources */,
 				3FACC6671A1E8D5A005A8C66 /* Space.jpg in Resources */,
@@ -243,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E71B1541A21B0740042323A /* GameOverViewController.swift in Sources */,
 				3FACC6401A1E8CC6005A8C66 /* GameScene.swift in Sources */,
 				3FACC6421A1E8CC6005A8C66 /* GameViewController.swift in Sources */,
 				3FACC63C1A1E8CC6005A8C66 /* AppDelegate.swift in Sources */,
@@ -437,6 +445,7 @@
 				3FACC65B1A1E8CC6005A8C66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FACC65C1A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space JumperTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +454,7 @@
 				3FACC65E1A1E8CC6005A8C66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

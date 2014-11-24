@@ -27,17 +27,19 @@ extension SKNode {
 
 class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var skView:SKView!
+    @IBOutlet weak var scene:GameScene!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
-            let skView = self.view as SKView
+            skView = self.view as SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
             
-            scene.scoreLabel = self.scoreLabel
+            scene.gameViewController = self
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
@@ -46,6 +48,7 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
+            
         }
     }
 
@@ -68,5 +71,24 @@ class GameViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    
+    func gameOver(sender: AnyObject) {
+        println("GameSceneToGameOver")
+        performSegueWithIdentifier("GameSceneToGameOver", sender:self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GameSceneToGameOver" {
+            let controller = segue.destinationViewController as GameOverViewController
+            controller.scoreLabelText = self.scoreLabel.text
+            
+            self.skView = nil
+            scene = nil
+            self.removeFromParentViewController()
+
+        }
+        
     }
 }

@@ -8,7 +8,8 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    weak var gameViewController:GameViewController!
     @IBOutlet weak var scoreLabel: UILabel!
     var jumper = SKSpriteNode()
     var sprite = SKSpriteNode()
@@ -18,21 +19,27 @@ class GameScene: SKScene {
     enum ColliderType: UInt32{
         case jumper = 1
         case meteorite = 2
+        case deadlymeteorite = 3
     }
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         //Background
-        var space = SKSpriteNode(imageNamed: "space.jpg")
+        var space = SKSpriteNode(imageNamed: "space2.jpg")
+        space.name = "background"
+        space.setScale(0.5)
+        space.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
         self.addChild(space)
         
         //Physics
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
+        self.physicsWorld.contactDelegate = self
         
         //Bird
         var JumperTexture = SKTexture(imageNamed: "Alien")
         JumperTexture.filteringMode = SKTextureFilteringMode.Nearest
         
         jumper = SKSpriteNode(texture: JumperTexture)
+        jumper.name = "jumper"
         jumper.setScale(0.4)
         jumper.position = CGPoint(x: self.frame.size.width * 0.15, y: self.frame.size.height * 0.6)
         
@@ -40,8 +47,8 @@ class GameScene: SKScene {
         jumper.physicsBody?.dynamic = true
         jumper.physicsBody?.allowsRotation = false
         jumper.physicsBody?.categoryBitMask = ColliderType.jumper.rawValue
-        jumper.physicsBody?.contactTestBitMask = ColliderType.meteorite.rawValue
-        jumper.physicsBody?.collisionBitMask = ColliderType.meteorite.rawValue
+        jumper.physicsBody?.contactTestBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue
+        jumper.physicsBody?.collisionBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue
         
         self.addChild(jumper)
         
@@ -50,6 +57,7 @@ class GameScene: SKScene {
         var meteoriteTexture = SKTexture(imageNamed: "metorite_1.png")
         
         sprite = SKSpriteNode(texture: meteoriteTexture)
+        sprite.name = "platformmeteorite"
         
         sprite.position = CGPointMake(self.size.width/7, 4 * sprite.size.height/2)
         sprite.setScale(1)
@@ -76,20 +84,31 @@ class GameScene: SKScene {
         let spawnThenDelayForever = SKAction.repeatActionForever(spawnThenDelay)
         
         self.runAction(spawnThenDelayForever)
+        
     }
-    
+    func didBeginContact(contact:SKPhysicsContact)
+    {
+        //println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
+        if(contact.bodyA.node!.name! == "meteor" && contact.bodyB.node!.name! == "jumper")
+        {
+            // Game Over
+            self.gameViewController.gameOver(self)
+        }
+    }
     func spawnMeteorites(){
         var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         
         score += 100
-        scoreLabel.text = "Score: \(score)"
+        gameViewController.scoreLabel.text = "Score: \(score)"
         
         var meteoriteFile = "metorite_1.png"
         var meteorTexture = SKTexture(imageNamed: meteoriteFile)
         
         let meteor = SKSpriteNode(texture: meteorTexture)
+        meteor.name = "meteor"
         
+        meteor.physicsBody?.categoryBitMask = ColliderType.deadlymeteorite.rawValue
         // randomize setscale
         meteor.setScale(0.6 * size_random)
         while(meteor.size.width < 15.0){
