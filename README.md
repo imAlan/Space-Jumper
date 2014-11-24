@@ -17,8 +17,8 @@ George Lin
 
 Created on Fall 2014
 
-![1Menu] (Menu.png "1")
+![Menu] (Menu.png)
 
-![2SpaceJumper] (SpaceJumper.png)
+![SpaceJumper] (SpaceJumper.png)
 
-![3GameOver] (GameOver.png)
+![GameOver] (GameOver.png)
