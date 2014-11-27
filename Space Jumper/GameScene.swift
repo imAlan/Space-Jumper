@@ -11,35 +11,83 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     weak var gameViewController:GameViewController!
     @IBOutlet weak var scoreLabel: UILabel!
-    var jumper = SKSpriteNode()
-    var sprite = SKSpriteNode()
-    var meteorMoveAndRemove = SKAction()
+    
+    // background
+    var space: SKSpriteNode!
+    var jumpOffPad: SKSpriteNode!
+    
+    // obstacles
+    var distanceToMove: CGFloat!
+    var moveMeteors: SKAction!
+    var removeMeteors: SKAction!
+    var meteorMoveAndRemove: SKAction!
+    
+    // character
+    var jumper:SKSpriteNode!
+    
+    // game
+    
+    // time
+    var lastUpdateTimeInterval: CFTimeInterval = -1.0
+    var deltaTime: CGFloat = 0.0
+    
+    // collision
+    
+    // counters
     var score = 0
+    var count = 0
+    var limit = 5
+    
+    // colliders
+    // add different collidertypes (powerups!)
     
     enum ColliderType: UInt32{
         case jumper = 1
         case meteorite = 2
         case deadlymeteorite = 3
     }
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        //Background
-        var space = SKSpriteNode(imageNamed: "space2.jpg")
-        space.name = "background"
-        space.setScale(0.5)
-        space.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
-        self.addChild(space)
-        
+        initSetup()
+        setupBackground()
+        setupJumper()
+        setupGround()
+    }
+    
+    func initSetup(){
         //Physics
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
         self.physicsWorld.contactDelegate = self
         
-        //Bird
+        // movement initial
+        distanceToMove = CGFloat(self.frame.size.width * 0.5)
+        moveMeteors = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.01 * distanceToMove))
+        removeMeteors = SKAction.removeFromParent()
+        meteorMoveAndRemove = SKAction.sequence([moveMeteors, removeMeteors])
+    }
+    
+    func setupBackground(){
+        //Background
+        space = SKSpriteNode(imageNamed: "space2.jpg")
+        space.name = "background"
+        self.addChild(space)
+        
+        space.setScale(0.5)
+        space.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
+        
+        // figure how to do parallax scrolling without lag
+    }
+    
+    func setupJumper(){
+        // setting up alien jumper
+        // animation code would go here
         var JumperTexture = SKTexture(imageNamed: "Alien")
         JumperTexture.filteringMode = SKTextureFilteringMode.Nearest
         
         jumper = SKSpriteNode(texture: JumperTexture)
         jumper.name = "jumper"
+        
         jumper.setScale(0.4)
         jumper.position = CGPoint(x: self.frame.size.width * 0.15, y: self.frame.size.height * 0.6)
         
@@ -50,53 +98,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumper.physicsBody?.contactTestBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue
         jumper.physicsBody?.collisionBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue
         
-        self.addChild(jumper)
-        
-        //Metorite
-        
+        self.addChild(jumper)        
+    }
+    
+    func setupGround(){
+        // setting up jump off pad
         var meteoriteTexture = SKTexture(imageNamed: "metorite_1.png")
         
-        sprite = SKSpriteNode(texture: meteoriteTexture)
-        sprite.name = "platformmeteorite"
+        jumpOffPad = SKSpriteNode(texture: meteoriteTexture)
+        jumpOffPad.name = "platformmeteorite"
+        self.addChild(jumpOffPad)
         
-        sprite.position = CGPointMake(self.size.width/7, 4 * sprite.size.height/2)
-        sprite.setScale(1)
-        self.addChild(sprite)
+        jumpOffPad.position = CGPointMake(self.size.width/7, 4 * jumpOffPad.size.height/2)
+        jumpOffPad.setScale(1)
         
-        sprite.physicsBody = SKPhysicsBody(rectangleOfSize: sprite.size)
-        sprite.physicsBody?.dynamic = false
-        sprite.physicsBody?.categoryBitMask = ColliderType.meteorite.rawValue
-        sprite.physicsBody?.contactTestBitMask = ColliderType.jumper.rawValue
-        sprite.physicsBody?.collisionBitMask = ColliderType.jumper.rawValue
+        jumpOffPad.runAction(meteorMoveAndRemove)
         
-        let distanceToMove = CGFloat(self.frame.size.width + 1.0 * sprite.size.width)
-        let moveMeteors = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.01 * distanceToMove))
-        let removeMeteors = SKAction.removeFromParent()
-        meteorMoveAndRemove = SKAction.sequence([moveMeteors, removeMeteors])
-        sprite.runAction(meteorMoveAndRemove)
+        jumpOffPad.physicsBody = SKPhysicsBody(rectangleOfSize: jumpOffPad.size)
+        jumpOffPad.physicsBody?.dynamic = false
+        jumpOffPad.physicsBody?.categoryBitMask = ColliderType.meteorite.rawValue
+        jumpOffPad.physicsBody?.contactTestBitMask = ColliderType.jumper.rawValue
+        jumpOffPad.physicsBody?.collisionBitMask = ColliderType.jumper.rawValue
         
-        // actually spawn meteors and shit
-        let spawn = SKAction.runBlock({() in self.spawnMeteorites()})
-        // find a way to randomize this time interval
-        let delayMeteors = SKAction.waitForDuration(NSTimeInterval(0.6))
-        
-        let spawnThenDelay = SKAction.sequence([spawn, delayMeteors])
-        let spawnThenDelayForever = SKAction.repeatActionForever(spawnThenDelay)
-        
-        self.runAction(spawnThenDelayForever)
-        
+        // off screen collsion would go here
     }
-    func didBeginContact(contact:SKPhysicsContact)
-    {
-        //println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
-        if(contact.bodyA.node!.name! == "meteor" && contact.bodyB.node!.name! == "jumper")
-        {
-            // Game Over
-            self.paused = true
-            self.gameViewController.gameOver(self)
-        }
-    }
+    
     func spawnMeteorites(){
+        // generating meteors
         var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         
@@ -108,6 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let meteor = SKSpriteNode(texture: meteorTexture)
         meteor.name = "meteor"
+        self.addChild(meteor)
         
         meteor.physicsBody?.categoryBitMask = ColliderType.deadlymeteorite.rawValue
         // randomize setscale
@@ -118,11 +147,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         // controlling meteor movements
-        let distanceToMove = CGFloat(self.frame.size.width + 1.0 * meteor.size.width)
+        distanceToMove = CGFloat(self.frame.size.width + 1.0 * meteor.size.width)
         
         // randomize speed
-        let moveMeteors = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * size_random * distanceToMove))
-        let removeMeteors = SKAction.removeFromParent()
+        moveMeteors = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * size_random * distanceToMove))
+        removeMeteors = SKAction.removeFromParent()
         meteorMoveAndRemove = SKAction.sequence([moveMeteors, removeMeteors])
         
         
@@ -134,7 +163,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // adjust movement parameters
         meteor.runAction(meteorMoveAndRemove)
-        self.addChild(meteor)
+    }
+    
+    func spawnPowerUp(){
+        
+    }
+    
+    func spawnPremadeType1(){
+        
+    }
+    
+    func spawnPremadeType2(){
+        
+    }
+    
+    func changeBackground(){
+        
+    }
+    
+    func didBeginContact(contact:SKPhysicsContact)
+    {
+        //println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
+        if(contact.bodyA.node!.name! == "meteor" && contact.bodyB.node!.name! == "jumper")
+        {
+            // Game Over
+            self.paused = true
+            //self.removeAllActions()
+            self.gameViewController.gameOver(self)
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -144,8 +200,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let location = touch.locationInNode(self)
             
             let jump = SKAction()
-            
-            
             jumper.runAction(jump, withKey: "jumping")
             jumper.physicsBody?.velocity = CGVectorMake(0, 0)
             jumper.physicsBody?.applyImpulse(CGVectorMake(0, 17))
@@ -154,5 +208,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        // spawn meteors every 5 frames
+        count++
+        if (count == limit){
+            spawnMeteorites()
+            count = 0
+        }
+        
     }
 }
