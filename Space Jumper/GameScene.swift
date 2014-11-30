@@ -30,13 +30,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // time
     var lastUpdateTimeInterval: CFTimeInterval = -1.0
     var deltaTime: CGFloat = 0.0
-    
+    var current_time = 0.0
+    var diff_sec = 0
     // collision
     
     // counters
     var score = 0
     var count = 0
-    var limit = 5
+    var limit = 50
     
     // colliders
     // add different collidertypes (powerups!)
@@ -205,14 +206,66 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             jumper.physicsBody?.applyImpulse(CGVectorMake(0, 17))
         }
     }
-    
+
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         // spawn meteors every 5 frames
+        if current_time == 0.0{
+            current_time = currentTime
+        }
+        diff_sec = Int((currentTime - current_time)/1.5)
+        
+        println("limit: \(limit)  count: \(count)")
         count++
-        if (count == limit){
+        if (count == limit || count > limit){
             spawnMeteorites()
             count = 0
+        }
+        
+        //Change number of spawn meteorites base on time
+        if diff_sec < 5
+        {
+            limit = 50
+        }
+        else if diff_sec < 10
+        {
+            limit = 45
+        }
+        else if diff_sec < 15
+        {
+            limit = 40
+        }
+        else if diff_sec < 20
+        {
+            limit = 30
+        }
+        else if diff_sec < 25
+        {
+            limit = 35
+        }
+        else if diff_sec < 30
+        {
+            limit = 30
+        }
+        else if diff_sec < 35
+        {
+            limit = 25
+        }
+        else if diff_sec < 40
+        {
+            limit = 20
+        }
+        else if diff_sec < 45
+        {
+            limit = 15
+        }
+        else if diff_sec < 50
+        {
+            limit = 10
+        }
+        else
+        {
+            limit = 8
         }
         
     }

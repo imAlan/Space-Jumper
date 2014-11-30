@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
         if segue.identifier == "GameSceneToGameOver" {
             let controller = segue.destinationViewController as GameOverViewController
             controller.scoreLabelText = self.scoreLabel.text
-            
+            skView.presentScene(nil)
             self.skView = nil
             scene = nil
             self.removeFromParentViewController()
