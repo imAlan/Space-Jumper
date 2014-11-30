@@ -104,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupGround(){
         // setting up jump off pad
-        var meteoriteTexture = SKTexture(imageNamed: "metorite_1.png")
+        var meteoriteTexture = SKTexture(imageNamed: "meteorite_0.png")
         
         jumpOffPad = SKSpriteNode(texture: meteoriteTexture)
         jumpOffPad.name = "platformmeteorite"
@@ -128,11 +128,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // generating meteors
         var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        var meteorite_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        var x = Int(meteorite_random*4)
         
         score += 100
         gameViewController.scoreLabel.text = "Score: \(score)"
         
-        var meteoriteFile = "metorite_1.png"
+        var meteoriteFile = "meteorite_\(x).png"
         var meteorTexture = SKTexture(imageNamed: meteoriteFile)
         
         let meteor = SKSpriteNode(texture: meteorTexture)
@@ -215,7 +217,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         diff_sec = Int((currentTime - current_time)/1.5)
         
-        println("limit: \(limit)  count: \(count)")
+        //println("limit: \(limit)  count: \(count)")
         count++
         if (count == limit || count > limit){
             spawnMeteorites()
