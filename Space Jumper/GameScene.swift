@@ -103,7 +103,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumper.name = "jumper"
         
         jumper.setScale(0.4)
-        jumper.position = CGPoint(x: self.frame.size.width * 0.15, y: self.frame.size.height * 0.6)
+        jumper.position = CGPoint(x: self.frame.size.width * 0.15, y: self.frame.size.height * 0.5)
         
         jumper.physicsBody = SKPhysicsBody(circleOfRadius: jumper.size.height/2.0)
         jumper.physicsBody?.dynamic = true
@@ -124,7 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupGround(){
         // setting up jump off pad
-        var meteoriteTexture = SKTexture(imageNamed: "meteorite_0.png")
+        var meteoriteTexture = SKTexture(imageNamed: "meteorite_10.png")
         
         jumpOffPad = SKSpriteNode(texture: meteoriteTexture)
         jumpOffPad.name = "platformmeteorite"
@@ -149,7 +149,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var meteorite_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var meteorite_num = Int(meteorite_random*4)
+        var meteorite_num = Int(meteorite_random*8)
         
         score += 100
         gameViewController.scoreLabel.text = "Score: \(score)"
