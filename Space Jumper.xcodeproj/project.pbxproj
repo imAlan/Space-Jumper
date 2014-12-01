@@ -16,6 +16,10 @@
 		3F54956F1A2D159E00DB289C /* meteorite_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5495671A2D159E00DB289C /* meteorite_7.png */; };
 		3F5495701A2D159E00DB289C /* meteorite_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5495681A2D159E00DB289C /* meteorite_0.png */; };
 		3F5495721A2D16B600DB289C /* meteorite_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5495711A2D16B600DB289C /* meteorite_10.png */; };
+		3F5495781A2D17A800DB289C /* ufo_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5495741A2D17A800DB289C /* ufo_0.png */; };
+		3F5495791A2D17A800DB289C /* ufo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5495751A2D17A800DB289C /* ufo_1.png */; };
+		3F54957A1A2D17A800DB289C /* ufo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5495761A2D17A800DB289C /* ufo_2.png */; };
+		3F54957B1A2D17A800DB289C /* ufo_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5495771A2D17A800DB289C /* ufo_3.png */; };
 		3FACC63C1A1E8CC6005A8C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */; };
 		3FACC63E1A1E8CC6005A8C66 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC63D1A1E8CC6005A8C66 /* GameScene.sks */; };
 		3FACC6401A1E8CC6005A8C66 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */; };
@@ -56,6 +60,10 @@
 		3F5495671A2D159E00DB289C /* meteorite_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_7.png; sourceTree = "<group>"; };
 		3F5495681A2D159E00DB289C /* meteorite_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_0.png; sourceTree = "<group>"; };
 		3F5495711A2D16B600DB289C /* meteorite_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_10.png; sourceTree = "<group>"; };
+		3F5495741A2D17A800DB289C /* ufo_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_0.png; sourceTree = "<group>"; };
+		3F5495751A2D17A800DB289C /* ufo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_1.png; sourceTree = "<group>"; };
+		3F5495761A2D17A800DB289C /* ufo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_2.png; sourceTree = "<group>"; };
+		3F5495771A2D17A800DB289C /* ufo_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_3.png; sourceTree = "<group>"; };
 		3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Jumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FACC63A1A1E8CC6005A8C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +106,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F5495731A2D17A800DB289C /* ufo */ = {
+			isa = PBXGroup;
+			children = (
+				3F5495741A2D17A800DB289C /* ufo_0.png */,
+				3F5495751A2D17A800DB289C /* ufo_1.png */,
+				3F5495761A2D17A800DB289C /* ufo_2.png */,
+				3F5495771A2D17A800DB289C /* ufo_3.png */,
+			);
+			path = ufo;
+			sourceTree = "<group>";
+		};
 		3FACC62D1A1E8CC6005A8C66 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +138,7 @@
 		3FACC6381A1E8CC6005A8C66 /* Space Jumper */ = {
 			isa = PBXGroup;
 			children = (
+				3F5495731A2D17A800DB289C /* ufo */,
 				3FACC65F1A1E8D5A005A8C66 /* Images */,
 				3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */,
 				3FACC63D1A1E8CC6005A8C66 /* GameScene.sks */,
@@ -274,10 +294,14 @@
 				5E6DC54E1A21A4AF007880E9 /* Space2.jpg in Resources */,
 				3F5495691A2D159E00DB289C /* meteorite_1.png in Resources */,
 				3F5495721A2D16B600DB289C /* meteorite_10.png in Resources */,
+				3F54957B1A2D17A800DB289C /* ufo_3.png in Resources */,
 				3FF342261A2D0F1300C0534F /* power_green.png in Resources */,
 				3F54956A1A2D159E00DB289C /* meteorite_2.png in Resources */,
 				3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */,
 				3FF342241A2D03D000C0534F /* Pink_Alien.png in Resources */,
+				3F54957A1A2D17A800DB289C /* ufo_2.png in Resources */,
+				3F5495781A2D17A800DB289C /* ufo_0.png in Resources */,
+				3F5495791A2D17A800DB289C /* ufo_1.png in Resources */,
 				3FACC6671A1E8D5A005A8C66 /* Space.jpg in Resources */,
 				3FF3422A1A2D113700C0534F /* Blue_Alien.png in Resources */,
 				3FACC63E1A1E8CC6005A8C66 /* GameScene.sks in Resources */,

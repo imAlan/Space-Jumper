@@ -18,13 +18,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // obstacles
     var distanceToMove: CGFloat!
-    var moveMeteors: SKAction!
-    var removeMeteors: SKAction!
-    var meteorMoveAndRemove: SKAction!
-    
-    var movePowerups: SKAction!
-    var removePowerups: SKAction!
-    var powerupMoveAndRemove: SKAction!
+    var moveObject: SKAction!
+    var removeObject: SKAction!
+    var objectMoveAndRemove: SKAction!
     
     var meteors: [SKSpriteNode]!
     
@@ -76,9 +72,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // movement initial
         distanceToMove = CGFloat(self.frame.size.width * 0.5)
-        moveMeteors = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.01 * distanceToMove))
-        removeMeteors = SKAction.removeFromParent()
-        meteorMoveAndRemove = SKAction.sequence([moveMeteors, removeMeteors])
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.01 * distanceToMove))
+        removeObject = SKAction.removeFromParent()
+        objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
     }
     
     func setupBackground(){
@@ -133,7 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumpOffPad.position = CGPointMake(self.size.width/7, 4 * jumpOffPad.size.height/2)
         jumpOffPad.setScale(1)
         
-        jumpOffPad.runAction(meteorMoveAndRemove)
+        jumpOffPad.runAction(objectMoveAndRemove)
         
         jumpOffPad.physicsBody = SKPhysicsBody(rectangleOfSize: jumpOffPad.size)
         jumpOffPad.physicsBody?.dynamic = false
@@ -144,8 +140,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // off screen collsion would go here
     }
     
+    //Generating Meteorites
     func spawnMeteorites(){
-        // generating meteors
+        //Random variables
         var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var meteorite_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
@@ -154,28 +151,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         score += 100
         gameViewController.scoreLabel.text = "Score: \(score)"
         
+        //Setup Meteorite
         var meteoriteFile = "meteorite_\(meteorite_num).png"
         var meteorTexture = SKTexture(imageNamed: meteoriteFile)
-        
         let meteor = SKSpriteNode(texture: meteorTexture)
         meteor.name = "meteor"
         self.addChild(meteor)
         
         meteor.physicsBody?.categoryBitMask = ColliderType.deadlymeteorite.rawValue
         // randomize setscale
-        meteor.setScale(0.6 * size_random)
-        while(meteor.size.width < 15.0){
+        while size_random < 0.5
+        {
             size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-            meteor.setScale(0.6*size_random)
         }
+        meteor.setScale(0.7 * size_random)
         
         // controlling meteor movements
         distanceToMove = CGFloat(self.frame.size.width + 1.0 * meteor.size.width)
         
         // randomize speed
-        moveMeteors = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * size_random * distanceToMove))
-        removeMeteors = SKAction.removeFromParent()
-        meteorMoveAndRemove = SKAction.sequence([moveMeteors, removeMeteors])
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * size_random * distanceToMove))
+        removeObject = SKAction.removeFromParent()
+        objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
         
         
         // randomize y position (self.frame.size.height/2.0)
@@ -185,45 +182,66 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         meteor.physicsBody?.dynamic = false
         
         // adjust movement parameters
-        meteor.runAction(meteorMoveAndRemove)
+        meteor.runAction(objectMoveAndRemove)
     }
     
-    func spawnRedPowerUp(){
+    func spawnUFO(){
         // generating meteors
+        var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        var meteorite_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        var meteorite_num = Int(meteorite_random*4)
         
-        var powerUpFile = "power_red.png"
-        var powerUpTexture = SKTexture(imageNamed: powerUpFile)
+        score += 100
+        gameViewController.scoreLabel.text = "Score: \(score)"
         
-        let powerUp = SKSpriteNode(texture: powerUpTexture)
-        powerUp.name = "red_powerup"
-        self.addChild(powerUp)
+        var ufoFile = "ufo_\(meteorite_num).png"
+        var ufoTexture = SKTexture(imageNamed: ufoFile)
         
-        // set bitmask
-        powerUp.physicsBody?.categoryBitMask = ColliderType.powerUp.rawValue
+        let ufo = SKSpriteNode(texture: ufoTexture)
+        let ufo2 = SKSpriteNode(texture: ufoTexture)
+        ufo.name = "ufo"
+        ufo2.name = "ufo"
+        self.addChild(ufo)
+        self.addChild(ufo2)
         
-        // set scale
-        powerUp.setScale(1.0)
+        ufo.physicsBody?.categoryBitMask = ColliderType.deadlymeteorite.rawValue
+        ufo.setScale(1.0)
         
-        // controlling movements
-        distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
+        ufo2.physicsBody?.categoryBitMask = ColliderType.deadlymeteorite.rawValue
+        ufo2.setScale(1.0)
         
-        // speed
-        movePowerups = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
-        removePowerups = SKAction.removeFromParent()
-        powerupMoveAndRemove = SKAction.sequence([movePowerups, removePowerups])
+        // controlling meteor movements
+        distanceToMove = CGFloat(self.frame.size.width + 1.0 * ufo.size.width)
         
+        // randomize speed
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
+        removeObject = SKAction.removeFromParent()
+        objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
+        
+        //ufo.anchorPoint = CGPointMake(0, 0)
+        //ufo2.anchorPoint = CGPointMake(0, 0)
+        
+        var rotateUFO = SKAction.rotateByAngle(CGFloat(-M_PI/2.0), duration: 1.0)
+        var rotateUFOForever = SKAction.repeatActionForever(rotateUFO)
         
         // randomize y position (self.frame.size.height/2.0)
-        powerUp.position = CGPointMake(self.frame.size.width + powerUp.size.width/2.0,
-            (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
-        powerUp.physicsBody = SKPhysicsBody(rectangleOfSize: powerUp.size)
+       
+        var yposition_random = abs((self.frame.size.height - (self.frame.size.height/2.5) - ufo.size.height * 3.2) * position_random) + ufo.size.height * 1.6
+        ufo.position = CGPointMake(self.frame.size.width + ufo.size.width/2.0, yposition_random)
+        println(yposition_random)
+        ufo2.position = CGPointMake(self.frame.size.width + ufo.size.width/2.0, yposition_random + self.frame.size.height/2.5)
+        ufo.physicsBody = SKPhysicsBody(rectangleOfSize: ufo.size)
+        ufo2.physicsBody = SKPhysicsBody(rectangleOfSize: ufo2.size)
         
-        // so it doesn't collide with other stuff
-        powerUp.physicsBody?.dynamic = false
+        ufo.physicsBody?.dynamic = false
+        ufo2.physicsBody?.dynamic = false
         
         // adjust movement parameters
-        powerUp.runAction(powerupMoveAndRemove)
+        ufo.runAction(rotateUFOForever)
+        ufo.runAction(objectMoveAndRemove)
+        ufo2.runAction(rotateUFOForever)
+        ufo2.runAction(objectMoveAndRemove)
     }
     
     func spawnGreenPowerUp(){
@@ -247,9 +265,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
         
         // speed
-        movePowerups = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
-        removePowerups = SKAction.removeFromParent()
-        meteorMoveAndRemove = SKAction.sequence([movePowerups, removePowerups])
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
+        removeObject = SKAction.removeFromParent()
+        objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
         
         
         // randomize y position (self.frame.size.height/2.0)
@@ -261,13 +279,52 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         powerUp.physicsBody?.dynamic = false
         
         // adjust movement parameters
-        powerUp.runAction(powerupMoveAndRemove)
+        powerUp.runAction(objectMoveAndRemove)
+    }
+    
+    func spawnRedPowerUp(){
+        // generating meteors
+        var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        
+        var powerUpFile = "power_red.png"
+        var powerUpTexture = SKTexture(imageNamed: powerUpFile)
+        
+        let powerUp = SKSpriteNode(texture: powerUpTexture)
+        powerUp.name = "red_powerup"
+        self.addChild(powerUp)
+        
+        // set bitmask
+        powerUp.physicsBody?.categoryBitMask = ColliderType.powerUp.rawValue
+        
+        // set scale
+        powerUp.setScale(1.0)
+        
+        // controlling movements
+        distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
+        
+        // speed
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
+        removeObject = SKAction.removeFromParent()
+        objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
+        
+        
+        // randomize y position (self.frame.size.height/2.0)
+        powerUp.position = CGPointMake(self.frame.size.width + powerUp.size.width/2.0,
+            (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
+        powerUp.physicsBody = SKPhysicsBody(rectangleOfSize: powerUp.size)
+        
+        // so it doesn't collide with other stuff
+        powerUp.physicsBody?.dynamic = false
+        
+        // adjust movement parameters
+        powerUp.runAction(objectMoveAndRemove)
     }
     
     func spawnPowerups()
     {
         var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var num = Int(powerup_random * 20)
+        println(num)
         if num == 5
         {
             spawnGreenPowerUp()
@@ -275,6 +332,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else if num == 10
         {
             spawnRedPowerUp()
+        }
+        else if num == 15
+        {
+            spawnUFO()
         }
     }
     
