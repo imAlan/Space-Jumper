@@ -244,60 +244,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ufo2.runAction(objectMoveAndRemove)
     }
     
-    func spawnGreenPowerUp(){
+    func spawnColorPowerUp(powerupNum: Int){
+        println(powerupNum)
         // generating meteors
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         
-        var powerUpFile = "power_green.png"
+        var powerUpFile = ""
+        
+        if powerupNum == 0
+        {
+            powerUpFile = "power_green.png"
+        }
+        else if powerupNum == 1
+        {
+            powerUpFile = "power_red.png"
+        }
+        
         var powerUpTexture = SKTexture(imageNamed: powerUpFile)
         
         let powerUp = SKSpriteNode(texture: powerUpTexture)
-        powerUp.name = "green_powerup"
-        self.addChild(powerUp)
-        
+        powerUp.setScale(1.0)
         // set bitmask
         powerUp.physicsBody?.categoryBitMask = ColliderType.powerUp.rawValue
         
         // set scale
-        powerUp.setScale(1.0)
+        if powerupNum == 0
+        {
+            powerUp.name = "green_powerup"
+        }
+        else if powerupNum == 1
+        {
+            powerUp.name = "red_powerup"
+        }
         
-        // controlling movements
-        distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
-        
-        // speed
-        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
-        removeObject = SKAction.removeFromParent()
-        objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
-        
-        
-        // randomize y position (self.frame.size.height/2.0)
-        powerUp.position = CGPointMake(self.frame.size.width + powerUp.size.width/2.0,
-            (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
-        powerUp.physicsBody = SKPhysicsBody(rectangleOfSize: powerUp.size)
-        
-        // so it doesn't collide with other stuff
-        powerUp.physicsBody?.dynamic = false
-        
-        // adjust movement parameters
-        powerUp.runAction(objectMoveAndRemove)
-    }
-    
-    func spawnRedPowerUp(){
-        // generating meteors
-        var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        
-        var powerUpFile = "power_red.png"
-        var powerUpTexture = SKTexture(imageNamed: powerUpFile)
-        
-        let powerUp = SKSpriteNode(texture: powerUpTexture)
-        powerUp.name = "red_powerup"
         self.addChild(powerUp)
-        
-        // set bitmask
-        powerUp.physicsBody?.categoryBitMask = ColliderType.powerUp.rawValue
-        
-        // set scale
-        powerUp.setScale(1.0)
         
         // controlling movements
         distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
@@ -323,17 +303,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnPowerups()
     {
         var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var num = Int(powerup_random * 20)
+        var num = Int(powerup_random * 3)
         println(num)
-        if num == 5
+        if num == 0
         {
-            spawnGreenPowerUp()
+            spawnColorPowerUp(0)
         }
-        else if num == 10
+        else if num == 1
         {
-            spawnRedPowerUp()
+            spawnColorPowerUp(1)
         }
-        else if num == 15
+        else if num == 2
         {
             spawnUFO()
         }
@@ -354,7 +334,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBeginContact(contact:SKPhysicsContact)
     {
         //println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
-        if(contact.bodyA.node!.name! == "meteor" && contact.bodyB.node!.name! == "jumper")
+        if(contact.bodyA.node!.name! == "meteor" || contact.bodyA.node!.name! == "ufo" && contact.bodyB.node!.name! == "jumper")
         {
             // Game Over
             self.paused = true
@@ -363,7 +343,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if(contact.bodyA.node!.name! == "red_powerup" && contact.bodyB.node!.name! == "jumper")
         {
-            // powered up
+            // powered up; make alien smaller
             poweredUp = true
             jumper.texture = SKTexture(imageNamed: "Pink_Alien")
             jumper.setScale(0.25)
@@ -372,7 +352,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if(contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper")
         {
-            // powered up
+            // powered up; make alien bigger
             poweredUp = true
             jumper.texture = SKTexture(imageNamed: "Blue_Alien")
             jumper.setScale(0.5)
