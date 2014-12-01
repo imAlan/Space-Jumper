@@ -180,6 +180,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                       (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
         meteor.physicsBody = SKPhysicsBody(rectangleOfSize: meteor.size)
         meteor.physicsBody?.dynamic = false
+        var rotateMeteorite = SKAction.rotateByAngle(CGFloat(-M_PI/2.5 ), duration: 1.0)
+        var rotateMeteoriteForever = SKAction.repeatActionForever(rotateMeteorite)
+        
+        meteor.runAction(rotateMeteoriteForever)
         
         // adjust movement parameters
         meteor.runAction(objectMoveAndRemove)
@@ -215,7 +219,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         distanceToMove = CGFloat(self.frame.size.width + 1.0 * ufo.size.width)
         
         // randomize speed
-        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.0025 * distanceToMove))
         removeObject = SKAction.removeFromParent()
         objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
         
@@ -278,15 +282,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         self.addChild(powerUp)
-        
         // controlling movements
         distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
         
         // speed
-        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.003 * distanceToMove))
         removeObject = SKAction.removeFromParent()
         objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
-        
         
         // randomize y position (self.frame.size.height/2.0)
         powerUp.position = CGPointMake(self.frame.size.width + powerUp.size.width/2.0,
@@ -363,7 +365,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             
