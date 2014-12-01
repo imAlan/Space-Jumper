@@ -22,8 +22,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var removeMeteors: SKAction!
     var meteorMoveAndRemove: SKAction!
     
+    var movePowerups: SKAction!
+    var removePowerups: SKAction!
+    var powerupMoveAndRemove: SKAction!
+    
+    var meteors: [SKSpriteNode]!
+    
     // character
     var jumper:SKSpriteNode!
+    var pink_jumper:SKSpriteNode!
     
     // game
     
@@ -38,6 +45,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0
     var count = 0
     var limit = 50
+    var powerUpTimer = 0
+    
+    // booleans
+    
+    var poweredUp = false
     
     // colliders
     // add different collidertypes (powerups!)
@@ -46,6 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case jumper = 1
         case meteorite = 2
         case deadlymeteorite = 3
+        case powerUp = 4
     }
     
     override func didMoveToView(view: SKView) {
@@ -95,11 +108,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumper.physicsBody = SKPhysicsBody(circleOfRadius: jumper.size.height/2.0)
         jumper.physicsBody?.dynamic = true
         jumper.physicsBody?.allowsRotation = false
+        jumper.physicsBody?.usesPreciseCollisionDetection = true;
         jumper.physicsBody?.categoryBitMask = ColliderType.jumper.rawValue
-        jumper.physicsBody?.contactTestBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue
-        jumper.physicsBody?.collisionBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue
+        jumper.physicsBody?.contactTestBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue | ColliderType.powerUp.rawValue
+        jumper.physicsBody?.collisionBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue | ColliderType.powerUp.rawValue
         
-        self.addChild(jumper)        
+        self.addChild(jumper)
+    }
+    
+    func switchJumper(){
+        var JumperTexture = SKTexture(imageNamed: "Pink_Alien")
+        JumperTexture.filteringMode = SKTextureFilteringMode.Nearest
+        jumper = SKSpriteNode(texture: JumperTexture)
     }
     
     func setupGround(){
@@ -129,12 +149,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var meteorite_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var x = Int(meteorite_random*4)
+        var meteorite_num = Int(meteorite_random*4)
         
         score += 100
         gameViewController.scoreLabel.text = "Score: \(score)"
         
-        var meteoriteFile = "meteorite_\(x).png"
+        var meteoriteFile = "meteorite_\(meteorite_num).png"
         var meteorTexture = SKTexture(imageNamed: meteoriteFile)
         
         let meteor = SKSpriteNode(texture: meteorTexture)
@@ -168,8 +188,94 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         meteor.runAction(meteorMoveAndRemove)
     }
     
-    func spawnPowerUp(){
+    func spawnRedPowerUp(){
+        // generating meteors
+        var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         
+        var powerUpFile = "power_red.png"
+        var powerUpTexture = SKTexture(imageNamed: powerUpFile)
+        
+        let powerUp = SKSpriteNode(texture: powerUpTexture)
+        powerUp.name = "red_powerup"
+        self.addChild(powerUp)
+        
+        // set bitmask
+        powerUp.physicsBody?.categoryBitMask = ColliderType.powerUp.rawValue
+        
+        // set scale
+        powerUp.setScale(1.0)
+        
+        // controlling movements
+        distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
+        
+        // speed
+        movePowerups = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
+        removePowerups = SKAction.removeFromParent()
+        powerupMoveAndRemove = SKAction.sequence([movePowerups, removePowerups])
+        
+        
+        // randomize y position (self.frame.size.height/2.0)
+        powerUp.position = CGPointMake(self.frame.size.width + powerUp.size.width/2.0,
+            (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
+        powerUp.physicsBody = SKPhysicsBody(rectangleOfSize: powerUp.size)
+        
+        // so it doesn't collide with other stuff
+        powerUp.physicsBody?.dynamic = false
+        
+        // adjust movement parameters
+        powerUp.runAction(powerupMoveAndRemove)
+    }
+    
+    func spawnGreenPowerUp(){
+        // generating meteors
+        var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        
+        var powerUpFile = "power_green.png"
+        var powerUpTexture = SKTexture(imageNamed: powerUpFile)
+        
+        let powerUp = SKSpriteNode(texture: powerUpTexture)
+        powerUp.name = "green_powerup"
+        self.addChild(powerUp)
+        
+        // set bitmask
+        powerUp.physicsBody?.categoryBitMask = ColliderType.powerUp.rawValue
+        
+        // set scale
+        powerUp.setScale(1.0)
+        
+        // controlling movements
+        distanceToMove = CGFloat(self.frame.size.width + 1.0 * powerUp.size.width)
+        
+        // speed
+        movePowerups = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * distanceToMove))
+        removePowerups = SKAction.removeFromParent()
+        meteorMoveAndRemove = SKAction.sequence([movePowerups, removePowerups])
+        
+        
+        // randomize y position (self.frame.size.height/2.0)
+        powerUp.position = CGPointMake(self.frame.size.width + powerUp.size.width/2.0,
+            (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
+        powerUp.physicsBody = SKPhysicsBody(rectangleOfSize: powerUp.size)
+        
+        // so it doesn't collide with other stuff
+        powerUp.physicsBody?.dynamic = false
+        
+        // adjust movement parameters
+        powerUp.runAction(powerupMoveAndRemove)
+    }
+    
+    func spawnPowerups()
+    {
+        var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        var num = Int(powerup_random * 20)
+        if num == 5
+        {
+            spawnGreenPowerUp()
+        }
+        else if num == 10
+        {
+            spawnRedPowerUp()
+        }
     }
     
     func spawnPremadeType1(){
@@ -193,6 +299,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.paused = true
             //self.removeAllActions()
             self.gameViewController.gameOver(self)
+        }
+        if(contact.bodyA.node!.name! == "red_powerup" && contact.bodyB.node!.name! == "jumper")
+        {
+            // powered up
+            poweredUp = true
+            jumper.texture = SKTexture(imageNamed: "Pink_Alien")
+            jumper.setScale(0.25)
+            jumper.physicsBody?.dynamic = true
+            powerUpTimer = 100
+        }
+        if(contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper")
+        {
+            // powered up
+            poweredUp = true
+            jumper.texture = SKTexture(imageNamed: "Blue_Alien")
+            jumper.setScale(0.5)
+            jumper.physicsBody?.dynamic = true
+            powerUpTimer = 100
         }
     }
     
@@ -221,8 +345,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         count++
         if (count == limit || count > limit){
             spawnMeteorites()
+            spawnPowerups()
             count = 0
         }
+        
+        if (powerUpTimer > 0){
+            powerUpTimer--
+        }
+        
+        if (powerUpTimer <= 0){
+            poweredUp = false
+            jumper.texture = SKTexture(imageNamed: "Alien")
+            jumper.physicsBody?.dynamic = true
+            jumper.setScale(0.4)
+        }
+        
+        jumper.position.x = self.frame.size.width * 0.15
         
         //Change number of spawn meteorites base on time
         if diff_sec < 5

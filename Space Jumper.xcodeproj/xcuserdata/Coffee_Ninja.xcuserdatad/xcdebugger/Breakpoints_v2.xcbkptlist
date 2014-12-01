@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Space Jumper/GameScene.swift"
-            timestampString = "439057012.427544"
+            timestampString = "439159307.805292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "initSetup()"
             landmarkType = "5">
          </BreakpointContent>

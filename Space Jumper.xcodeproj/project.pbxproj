@@ -22,6 +22,10 @@
 		3FACC6651A1E8D5A005A8C66 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6611A1E8D5A005A8C66 /* Home.png */; };
 		3FACC6661A1E8D5A005A8C66 /* meteorite_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6621A1E8D5A005A8C66 /* meteorite_0.png */; };
 		3FACC6671A1E8D5A005A8C66 /* Space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6631A1E8D5A005A8C66 /* Space.jpg */; };
+		3FF342241A2D03D000C0534F /* Pink_Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF342231A2D03D000C0534F /* Pink_Alien.png */; };
+		3FF342261A2D0F1300C0534F /* power_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF342251A2D0F1300C0534F /* power_green.png */; };
+		3FF342281A2D0F7A00C0534F /* power_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF342271A2D0F7A00C0534F /* power_red.png */; };
+		3FF3422A1A2D113700C0534F /* Blue_Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF342291A2D113700C0534F /* Blue_Alien.png */; };
 		5E6DC54E1A21A4AF007880E9 /* Space2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DC54D1A21A4AF007880E9 /* Space2.jpg */; };
 		5E71B1541A21B0740042323A /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E71B1531A21B0740042323A /* GameOverViewController.swift */; };
 		5E71B1561A22DF1C0042323A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E71B1551A22DF1C0042323A /* MenuViewController.swift */; };
@@ -57,6 +61,10 @@
 		3FACC6611A1E8D5A005A8C66 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
 		3FACC6621A1E8D5A005A8C66 /* meteorite_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_0.png; sourceTree = "<group>"; };
 		3FACC6631A1E8D5A005A8C66 /* Space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space.jpg; sourceTree = "<group>"; };
+		3FF342231A2D03D000C0534F /* Pink_Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pink_Alien.png; sourceTree = "<group>"; };
+		3FF342251A2D0F1300C0534F /* power_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power_green.png; sourceTree = "<group>"; };
+		3FF342271A2D0F7A00C0534F /* power_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power_red.png; sourceTree = "<group>"; };
+		3FF342291A2D113700C0534F /* Blue_Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue_Alien.png; sourceTree = "<group>"; };
 		5E6DC54D1A21A4AF007880E9 /* Space2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space2.jpg; sourceTree = "<group>"; };
 		5E71B1531A21B0740042323A /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		5E71B1551A22DF1C0042323A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +152,10 @@
 		3FACC65F1A1E8D5A005A8C66 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3FF342291A2D113700C0534F /* Blue_Alien.png */,
+				3FF342271A2D0F7A00C0534F /* power_red.png */,
+				3FF342251A2D0F1300C0534F /* power_green.png */,
+				3FF342231A2D03D000C0534F /* Pink_Alien.png */,
 				3FACC6621A1E8D5A005A8C66 /* meteorite_0.png */,
 				3F8F57771A2B87B500C3490B /* meteorite_1.png */,
 				3F8F57781A2B87B500C3490B /* meteorite_2.png */,
@@ -238,12 +250,16 @@
 			files = (
 				3FACC6651A1E8D5A005A8C66 /* Home.png in Resources */,
 				3F8F577A1A2B87B500C3490B /* meteorite_1.png in Resources */,
+				3FF342281A2D0F7A00C0534F /* power_red.png in Resources */,
 				3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */,
 				3F8F577C1A2B87B500C3490B /* meteorite_3.png in Resources */,
 				5E6DC54E1A21A4AF007880E9 /* Space2.jpg in Resources */,
+				3FF342261A2D0F1300C0534F /* power_green.png in Resources */,
 				3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */,
+				3FF342241A2D03D000C0534F /* Pink_Alien.png in Resources */,
 				3FACC6661A1E8D5A005A8C66 /* meteorite_0.png in Resources */,
 				3FACC6671A1E8D5A005A8C66 /* Space.jpg in Resources */,
+				3FF3422A1A2D113700C0534F /* Blue_Alien.png in Resources */,
 				3FACC63E1A1E8CC6005A8C66 /* GameScene.sks in Resources */,
 				3F8F577B1A2B87B500C3490B /* meteorite_2.png in Resources */,
 				3FACC6451A1E8CC6005A8C66 /* Main.storyboard in Resources */,
