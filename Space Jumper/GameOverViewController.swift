@@ -16,7 +16,7 @@ class GameOverViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         scoreLabel.text = scoreLabelText
-        var patternImage:UIImage = UIImage(named: "Space.jpg")!
+        var patternImage:UIImage = UIImage(named: "Space3.png")!
         self.view.backgroundColor = UIColor(patternImage: patternImage)
     }
 

@@ -15,6 +15,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // background
     var space: SKSpriteNode!
     var jumpOffPad: SKSpriteNode!
+    var ground: SKSpriteNode!
+    var ground2: SKSpriteNode!
     
     // obstacles
     var distanceToMove: CGFloat!
@@ -40,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // counters
     var score = 0
     var count = 0
-    var limit = 50
+    var limit = 60
     var powerUpTimer = 0
     
     // booleans
@@ -55,6 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case meteorite = 2
         case deadlymeteorite = 3
         case powerUp = 4
+        case ground = 5
     }
     
     override func didMoveToView(view: SKView) {
@@ -79,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupBackground(){
         //Background
-        space = SKSpriteNode(imageNamed: "space2.jpg")
+        space = SKSpriteNode(imageNamed: "space.jpg")
         space.name = "background"
         self.addChild(space)
         
@@ -106,16 +109,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumper.physicsBody?.allowsRotation = false
         jumper.physicsBody?.usesPreciseCollisionDetection = true;
         jumper.physicsBody?.categoryBitMask = ColliderType.jumper.rawValue
-        jumper.physicsBody?.contactTestBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue | ColliderType.powerUp.rawValue
-        jumper.physicsBody?.collisionBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue | ColliderType.powerUp.rawValue
+        jumper.physicsBody?.contactTestBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue | ColliderType.powerUp.rawValue | ColliderType.ground.rawValue
+        jumper.physicsBody?.collisionBitMask = ColliderType.meteorite.rawValue | ColliderType.deadlymeteorite.rawValue | ColliderType.powerUp.rawValue | ColliderType.ground.rawValue
         
         self.addChild(jumper)
-    }
-    
-    func switchJumper(){
-        var JumperTexture = SKTexture(imageNamed: "Pink_Alien")
-        JumperTexture.filteringMode = SKTextureFilteringMode.Nearest
-        jumper = SKSpriteNode(texture: JumperTexture)
     }
     
     func setupGround(){
@@ -137,7 +134,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumpOffPad.physicsBody?.contactTestBitMask = ColliderType.jumper.rawValue
         jumpOffPad.physicsBody?.collisionBitMask = ColliderType.jumper.rawValue
         
-        // off screen collsion would go here
+        // Lower Ground
+        var groundTexture = SKTexture(imageNamed: "groundRock")
+        ground = SKSpriteNode(texture: groundTexture)
+        ground.name = "ground"
+        ground.size.width = 2000
+        self.addChild(ground)
+        ground.position = CGPointMake(ground.size.width/7, -ground.size.height)
+        ground.physicsBody = SKPhysicsBody(rectangleOfSize: ground.size)
+        ground.physicsBody?.categoryBitMask = ColliderType.ground.rawValue
+        ground.physicsBody?.dynamic = false
+        
+        // Upper Ground
+        ground2 = SKSpriteNode(texture: groundTexture)
+        ground2.name = "ground"
+        ground2.size.width = 2000
+        self.addChild(ground2)
+        ground2.position = CGPointMake(ground.size.width/7, self.frame.size.height)
+        ground2.physicsBody = SKPhysicsBody(rectangleOfSize: ground2.size)
+        ground2.physicsBody?.categoryBitMask = ColliderType.ground.rawValue
+        ground2.physicsBody?.dynamic = false
     }
     
     //Generating Meteorites
@@ -187,6 +203,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // adjust movement parameters
         meteor.runAction(objectMoveAndRemove)
+    }
+    
+    func spawnSpaceship()
+    {
+        //Add Code Here Later
     }
     
     func spawnUFO(){
@@ -336,7 +357,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBeginContact(contact:SKPhysicsContact)
     {
         //println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
-        if(contact.bodyA.node!.name! == "meteor" || contact.bodyA.node!.name! == "ufo" && contact.bodyB.node!.name! == "jumper")
+        if(contact.bodyA.node!.name! == "meteor" || contact.bodyA.node!.name! == "ufo" || contact.bodyA.node!.name! == "ground" && contact.bodyB.node!.name! == "jumper")
         {
             // Game Over
             self.paused = true

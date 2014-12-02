@@ -14,7 +14,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var patternImage:UIImage = UIImage(named: "Space.jpg")!
+        var patternImage:UIImage = UIImage(named: "Space5.png")!
         self.view.backgroundColor = UIColor(patternImage: patternImage)
     }
 
