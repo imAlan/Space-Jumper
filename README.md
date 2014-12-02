@@ -19,6 +19,9 @@ Created on Fall 2014
 
 ![Menu] (Menu.png)
 
-![SpaceJumper] (SpaceJumper.png)
+![SpaceJumper_1] (SpaceJumper1.png)
+
+![SpaceJumper_2] (SpaceJumper2.png)
 
 ![GameOver] (GameOver.png)
+

@@ -214,13 +214,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // generating meteors
         var size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var meteorite_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var meteorite_num = Int(meteorite_random*4)
+        var UFO_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        var UFO_num = Int(UFO_random*4)
         
         score += 100
         gameViewController.scoreLabel.text = "Score: \(score)"
         
-        var ufoFile = "ufo_\(meteorite_num).png"
+        var ufoFile = "ufo_\(UFO_num).png"
         var ufoTexture = SKTexture(imageNamed: ufoFile)
         
         let ufo = SKSpriteNode(texture: ufoTexture)
@@ -326,7 +326,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnPowerups()
     {
         var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var num = Int(powerup_random * 3)
+        var num = Int(powerup_random * 5)
         println(num)
         if num == 0
         {
