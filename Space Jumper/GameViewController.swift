@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import QuartzCore
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
@@ -25,31 +26,56 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, SceneDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var skView:SKView!
     @IBOutlet weak var scene:GameScene!
+
+    @IBOutlet var gameView: UIView!
+    @IBOutlet var menuView: UIView!
+    @IBOutlet var mainMenuImage: UIImageView!
+    @IBOutlet var gameOverView: UIView!
+    @IBOutlet var gameOverImage: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        //if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
-            skView = self.view as SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+        //    skView = self.view as SKView
+        //    skView.showsFPS = true
+        //    skView.showsNodeCount = true
             
-            scene.gameViewController = self
+        //    scene.gameViewController = self
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
+        //    skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+        //    scene.scaleMode = .AspectFill
             
-            skView.presentScene(scene)
+        //    skView.presentScene(scene)
             
-        }
+        //}
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        
+        // make scene
+        self.scene = GameScene(size: gameView.bounds.size)
+        self.scene!.scaleMode = .AspectFill
+        self.scene!.sceneDelegate = self
+        
+        // present
+        self.gameOverView.alpha = 0
+        self.gameOverView.transform = CGAffineTransformMakeScale(0.9, 0.9)
+        
+        self.gameView.presentScene(scene)
+        
+        // insert protocol functions
+        // setup view functions
+        // nibBundle
+        // setup image conditionals
     }
 
     override func shouldAutorotate() -> Bool {
@@ -73,22 +99,9 @@ class GameViewController: UIViewController {
         return true
     }
     
-    
     func gameOver(sender: AnyObject) {
         println("GameSceneToGameOver")
-        performSegueWithIdentifier("GameSceneToGameOver", sender:self)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "GameSceneToGameOver" {
-            let controller = segue.destinationViewController as GameOverViewController
-            controller.scoreLabelText = self.scoreLabel.text
-            skView.presentScene(nil)
-            self.skView = nil
-            scene = nil
-            self.removeFromParentViewController()
-
-        }
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        //self.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

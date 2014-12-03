@@ -73,6 +73,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
         self.physicsWorld.contactDelegate = self
         
+        //Set score to 0
+        instance.score = 0
+        
         // movement initial
         distanceToMove = CGFloat(self.frame.size.width * 0.5)
         moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.01 * distanceToMove))
@@ -82,7 +85,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupBackground(){
         //Background
-        space = SKSpriteNode(imageNamed: "space.jpg")
+        space = SKSpriteNode(imageNamed: "Space.jpg")
         space.name = "background"
         self.addChild(space)
         
@@ -254,7 +257,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        
         var yposition_random = abs((self.frame.size.height - (self.frame.size.height/2.5) - ufo.size.height * 3.2) * position_random) + ufo.size.height * 1.6
         ufo.position = CGPointMake(self.frame.size.width + ufo.size.width/2.0, yposition_random)
-        println(yposition_random)
+        //println(yposition_random)
         ufo2.position = CGPointMake(self.frame.size.width + ufo.size.width/2.0, yposition_random + self.frame.size.height/2.5)
         ufo.physicsBody = SKPhysicsBody(rectangleOfSize: ufo.size)
         ufo2.physicsBody = SKPhysicsBody(rectangleOfSize: ufo2.size)
@@ -270,7 +273,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func spawnColorPowerUp(powerupNum: Int){
-        println(powerupNum)
+        //println(powerupNum)
         // generating meteors
         var position_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         
@@ -326,17 +329,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnPowerups()
     {
         var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var num = Int(powerup_random * 5)
-        println(num)
-        if num == 0
+        var num = Int(powerup_random * 20)
+        //println(num)
+        if num == 5
         {
             spawnColorPowerUp(0)
         }
-        else if num == 1
+        else if num == 10
         {
             spawnColorPowerUp(1)
         }
-        else if num == 2
+        else if num == 15
         {
             spawnUFO()
         }
@@ -362,6 +365,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // Game Over
             self.paused = true
             //self.removeAllActions()
+            instance.score = score
             self.gameViewController.gameOver(self)
         }
         if(contact.bodyA.node!.name! == "red_powerup" && contact.bodyB.node!.name! == "jumper")
@@ -371,7 +375,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             jumper.texture = SKTexture(imageNamed: "Pink_Alien")
             jumper.setScale(0.25)
             jumper.physicsBody?.dynamic = true
-            powerUpTimer = 100
+            powerUpTimer = 400
         }
         if(contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper")
         {
@@ -380,7 +384,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             jumper.texture = SKTexture(imageNamed: "Blue_Alien")
             jumper.setScale(0.5)
             jumper.physicsBody?.dynamic = true
-            powerUpTimer = 100
+            powerUpTimer = 400
         }
     }
     
