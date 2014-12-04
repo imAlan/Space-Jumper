@@ -1,0 +1,714 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F54E2A31A2E7D19006590BD /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54E2A21A2E7D19006590BD /* singleton.swift */; };
+		3F5B69A41A2E90B0003C26D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B69A31A2E90B0003C26D4 /* SceneDelegate.swift */; };
+		3FACC63C1A1E8CC6005A8C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */; };
+		3FACC6401A1E8CC6005A8C66 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */; };
+		3FACC6421A1E8CC6005A8C66 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC6411A1E8CC6005A8C66 /* GameViewController.swift */; };
+		3FACC6451A1E8CC6005A8C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6431A1E8CC6005A8C66 /* Main.storyboard */; };
+		3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6461A1E8CC6005A8C66 /* Images.xcassets */; };
+		3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */; };
+		3FACC6561A1E8CC6005A8C66 /* Space_JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */; };
+		CA5F2E4C1A301B93006F9F56 /* groundRock2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5F2E4B1A301B93006F9F56 /* groundRock2.png */; };
+		CA6C4BBD1A2FF3AA0075918E /* placeholder_game_over@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C4BBB1A2FF3AA0075918E /* placeholder_game_over@2x.png */; };
+		CA6C4BBE1A2FF3AA0075918E /* placeholder_get_ready@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C4BBC1A2FF3AA0075918E /* placeholder_get_ready@2x.png */; };
+		CA6C4BC01A2FF68B0075918E /* math.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C4BBF1A2FF68B0075918E /* math.swift */; };
+		CA6C4BC21A2FF70E0075918E /* score.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C4BC11A2FF70E0075918E /* score.swift */; };
+		CA6C4BC41A2FF7780075918E /* SKScrollingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C4BC31A2FF7780075918E /* SKScrollingNode.swift */; };
+		CA6C4BC61A2FF9B40075918E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C4BC51A2FF9B40075918E /* Constants.swift */; };
+		CA6C4BC81A2FFD390075918E /* JumperNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C4BC71A2FFD390075918E /* JumperNode.swift */; };
+		CAA5C4741A2FEF2B00DD455F /* Space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4701A2FEF2B00DD455F /* Space.jpg */; };
+		CAA5C4751A2FEF2B00DD455F /* Space2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4711A2FEF2B00DD455F /* Space2.jpg */; };
+		CAA5C4761A2FEF2B00DD455F /* Space4.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4721A2FEF2B00DD455F /* Space4.png */; };
+		CAA5C4771A2FEF2B00DD455F /* Space5.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4731A2FEF2B00DD455F /* Space5.png */; };
+		CAA5C47D1A2FEF4100DD455F /* enemy_0.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4791A2FEF4100DD455F /* enemy_0.png */; };
+		CAA5C47E1A2FEF4100DD455F /* enemy_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C47A1A2FEF4100DD455F /* enemy_1.png */; };
+		CAA5C47F1A2FEF4100DD455F /* enemy_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C47B1A2FEF4100DD455F /* enemy_2.png */; };
+		CAA5C4801A2FEF4100DD455F /* enemy_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C47C1A2FEF4100DD455F /* enemy_3.png */; };
+		CAA5C4871A2FEF5C00DD455F /* Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4821A2FEF5C00DD455F /* Alien.png */; };
+		CAA5C4881A2FEF5C00DD455F /* Blue_Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4831A2FEF5C00DD455F /* Blue_Alien.png */; };
+		CAA5C4891A2FEF5C00DD455F /* Pink_Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4841A2FEF5C00DD455F /* Pink_Alien.png */; };
+		CAA5C48A1A2FEF5C00DD455F /* power_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4851A2FEF5C00DD455F /* power_green.png */; };
+		CAA5C48B1A2FEF5C00DD455F /* power_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4861A2FEF5C00DD455F /* power_red.png */; };
+		CAA5C4961A2FEF7600DD455F /* meteorite_0.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C48D1A2FEF7600DD455F /* meteorite_0.png */; };
+		CAA5C4971A2FEF7600DD455F /* meteorite_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C48E1A2FEF7600DD455F /* meteorite_1.png */; };
+		CAA5C4981A2FEF7600DD455F /* meteorite_10.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C48F1A2FEF7600DD455F /* meteorite_10.png */; };
+		CAA5C4991A2FEF7600DD455F /* meteorite_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4901A2FEF7600DD455F /* meteorite_2.png */; };
+		CAA5C49A1A2FEF7600DD455F /* meteorite_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4911A2FEF7600DD455F /* meteorite_3.png */; };
+		CAA5C49B1A2FEF7600DD455F /* meteorite_4.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4921A2FEF7600DD455F /* meteorite_4.png */; };
+		CAA5C49C1A2FEF7600DD455F /* meteorite_5.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4931A2FEF7600DD455F /* meteorite_5.png */; };
+		CAA5C49D1A2FEF7600DD455F /* meteorite_6.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4941A2FEF7600DD455F /* meteorite_6.png */; };
+		CAA5C49E1A2FEF7600DD455F /* meteorite_7.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4951A2FEF7600DD455F /* meteorite_7.png */; };
+		CAA5C4A51A2FEF8300DD455F /* Space3.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4A01A2FEF8300DD455F /* Space3.png */; };
+		CAA5C4A61A2FEF8300DD455F /* ufo_0.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4A11A2FEF8300DD455F /* ufo_0.png */; };
+		CAA5C4A71A2FEF8300DD455F /* ufo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4A21A2FEF8300DD455F /* ufo_1.png */; };
+		CAA5C4A81A2FEF8300DD455F /* ufo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4A31A2FEF8300DD455F /* ufo_2.png */; };
+		CAA5C4A91A2FEF8300DD455F /* ufo_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4A41A2FEF8300DD455F /* ufo_3.png */; };
+		CAA5C4AF1A2FEFEB00DD455F /* groundRock.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA5C4AE1A2FEFEB00DD455F /* groundRock.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3FACC6501A1E8CC6005A8C66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FACC62E1A1E8CC6005A8C66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FACC6351A1E8CC6005A8C66;
+			remoteInfo = "Space Jumper";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F54E2A21A2E7D19006590BD /* singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
+		3F5B69A31A2E90B0003C26D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Jumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FACC63A1A1E8CC6005A8C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3FACC6411A1E8CC6005A8C66 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3FACC6441A1E8CC6005A8C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FACC6461A1E8CC6005A8C66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Space Jumper/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		3FACC6491A1E8CC6005A8C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space JumperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FACC6541A1E8CC6005A8C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_JumperTests.swift; sourceTree = "<group>"; };
+		CA5F2E4B1A301B93006F9F56 /* groundRock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groundRock2.png; sourceTree = "<group>"; };
+		CA6C4BBB1A2FF3AA0075918E /* placeholder_game_over@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_game_over@2x.png"; sourceTree = "<group>"; };
+		CA6C4BBC1A2FF3AA0075918E /* placeholder_get_ready@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_get_ready@2x.png"; sourceTree = "<group>"; };
+		CA6C4BBF1A2FF68B0075918E /* math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = math.swift; sourceTree = "<group>"; };
+		CA6C4BC11A2FF70E0075918E /* score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = score.swift; sourceTree = "<group>"; };
+		CA6C4BC31A2FF7780075918E /* SKScrollingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScrollingNode.swift; sourceTree = "<group>"; };
+		CA6C4BC51A2FF9B40075918E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CA6C4BC71A2FFD390075918E /* JumperNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumperNode.swift; sourceTree = "<group>"; };
+		CAA5C4701A2FEF2B00DD455F /* Space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space.jpg; sourceTree = "<group>"; };
+		CAA5C4711A2FEF2B00DD455F /* Space2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space2.jpg; sourceTree = "<group>"; };
+		CAA5C4721A2FEF2B00DD455F /* Space4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Space4.png; sourceTree = "<group>"; };
+		CAA5C4731A2FEF2B00DD455F /* Space5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Space5.png; sourceTree = "<group>"; };
+		CAA5C4791A2FEF4100DD455F /* enemy_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_0.png; sourceTree = "<group>"; };
+		CAA5C47A1A2FEF4100DD455F /* enemy_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_1.png; sourceTree = "<group>"; };
+		CAA5C47B1A2FEF4100DD455F /* enemy_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_2.png; sourceTree = "<group>"; };
+		CAA5C47C1A2FEF4100DD455F /* enemy_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_3.png; sourceTree = "<group>"; };
+		CAA5C4821A2FEF5C00DD455F /* Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alien.png; sourceTree = "<group>"; };
+		CAA5C4831A2FEF5C00DD455F /* Blue_Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue_Alien.png; sourceTree = "<group>"; };
+		CAA5C4841A2FEF5C00DD455F /* Pink_Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pink_Alien.png; sourceTree = "<group>"; };
+		CAA5C4851A2FEF5C00DD455F /* power_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power_green.png; sourceTree = "<group>"; };
+		CAA5C4861A2FEF5C00DD455F /* power_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power_red.png; sourceTree = "<group>"; };
+		CAA5C48D1A2FEF7600DD455F /* meteorite_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_0.png; sourceTree = "<group>"; };
+		CAA5C48E1A2FEF7600DD455F /* meteorite_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_1.png; sourceTree = "<group>"; };
+		CAA5C48F1A2FEF7600DD455F /* meteorite_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_10.png; sourceTree = "<group>"; };
+		CAA5C4901A2FEF7600DD455F /* meteorite_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_2.png; sourceTree = "<group>"; };
+		CAA5C4911A2FEF7600DD455F /* meteorite_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_3.png; sourceTree = "<group>"; };
+		CAA5C4921A2FEF7600DD455F /* meteorite_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_4.png; sourceTree = "<group>"; };
+		CAA5C4931A2FEF7600DD455F /* meteorite_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_5.png; sourceTree = "<group>"; };
+		CAA5C4941A2FEF7600DD455F /* meteorite_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_6.png; sourceTree = "<group>"; };
+		CAA5C4951A2FEF7600DD455F /* meteorite_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteorite_7.png; sourceTree = "<group>"; };
+		CAA5C4A01A2FEF8300DD455F /* Space3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Space3.png; path = ../ufo/Space3.png; sourceTree = "<group>"; };
+		CAA5C4A11A2FEF8300DD455F /* ufo_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_0.png; sourceTree = "<group>"; };
+		CAA5C4A21A2FEF8300DD455F /* ufo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_1.png; sourceTree = "<group>"; };
+		CAA5C4A31A2FEF8300DD455F /* ufo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_2.png; sourceTree = "<group>"; };
+		CAA5C4A41A2FEF8300DD455F /* ufo_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo_3.png; sourceTree = "<group>"; };
+		CAA5C4AE1A2FEFEB00DD455F /* groundRock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groundRock.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FACC6331A1E8CC6005A8C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FACC64C1A1E8CC6005A8C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FACC62D1A1E8CC6005A8C66 = {
+			isa = PBXGroup;
+			children = (
+				3FACC6381A1E8CC6005A8C66 /* Space Jumper */,
+				3FACC6521A1E8CC6005A8C66 /* Space JumperTests */,
+				3FACC6371A1E8CC6005A8C66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FACC6371A1E8CC6005A8C66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */,
+				3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FACC6381A1E8CC6005A8C66 /* Space Jumper */ = {
+			isa = PBXGroup;
+			children = (
+				CA2930501A2FF09D0094CD34 /* Formatting */,
+				3FACC65F1A1E8D5A005A8C66 /* Images */,
+				CAA5C4B01A2FF00C00DD455F /* Classes */,
+				3FACC6391A1E8CC6005A8C66 /* Supporting Files */,
+			);
+			path = "Space Jumper";
+			sourceTree = "<group>";
+		};
+		3FACC6391A1E8CC6005A8C66 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC63A1A1E8CC6005A8C66 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FACC6521A1E8CC6005A8C66 /* Space JumperTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */,
+				3FACC6531A1E8CC6005A8C66 /* Supporting Files */,
+			);
+			path = "Space JumperTests";
+			sourceTree = "<group>";
+		};
+		3FACC6531A1E8CC6005A8C66 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC6541A1E8CC6005A8C66 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FACC65F1A1E8D5A005A8C66 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C4BBA1A2FF3AA0075918E /* menus */,
+				3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */,
+				3FACC6461A1E8CC6005A8C66 /* Images.xcassets */,
+				CAA5C46F1A2FEF2B00DD455F /* backgrounds */,
+				CAA5C4781A2FEF4100DD455F /* enemies */,
+				CAA5C4AD1A2FEFEB00DD455F /* limiters */,
+				CAA5C48C1A2FEF7600DD455F /* meteorites */,
+				CAA5C4811A2FEF5C00DD455F /* sprite object */,
+				CAA5C49F1A2FEF8300DD455F /* ufo */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		CA29304F1A2FF0860094CD34 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C4BC31A2FF7780075918E /* SKScrollingNode.swift */,
+				CA6C4BC71A2FFD390075918E /* JumperNode.swift */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+		CA2930501A2FF09D0094CD34 /* Formatting */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC6431A1E8CC6005A8C66 /* Main.storyboard */,
+			);
+			name = Formatting;
+			sourceTree = "<group>";
+		};
+		CA6C4BB31A2FF0EC0075918E /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */,
+				CA6C4BC51A2FF9B40075918E /* Constants.swift */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		CA6C4BBA1A2FF3AA0075918E /* menus */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C4BBB1A2FF3AA0075918E /* placeholder_game_over@2x.png */,
+				CA6C4BBC1A2FF3AA0075918E /* placeholder_get_ready@2x.png */,
+			);
+			path = menus;
+			sourceTree = "<group>";
+		};
+		CAA5C46F1A2FEF2B00DD455F /* backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5C4701A2FEF2B00DD455F /* Space.jpg */,
+				CAA5C4711A2FEF2B00DD455F /* Space2.jpg */,
+				CAA5C4A01A2FEF8300DD455F /* Space3.png */,
+				CAA5C4721A2FEF2B00DD455F /* Space4.png */,
+				CAA5C4731A2FEF2B00DD455F /* Space5.png */,
+			);
+			path = backgrounds;
+			sourceTree = "<group>";
+		};
+		CAA5C4781A2FEF4100DD455F /* enemies */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5C4791A2FEF4100DD455F /* enemy_0.png */,
+				CAA5C47A1A2FEF4100DD455F /* enemy_1.png */,
+				CAA5C47B1A2FEF4100DD455F /* enemy_2.png */,
+				CAA5C47C1A2FEF4100DD455F /* enemy_3.png */,
+			);
+			path = enemies;
+			sourceTree = "<group>";
+		};
+		CAA5C4811A2FEF5C00DD455F /* sprite object */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5C4821A2FEF5C00DD455F /* Alien.png */,
+				CAA5C4831A2FEF5C00DD455F /* Blue_Alien.png */,
+				CAA5C4841A2FEF5C00DD455F /* Pink_Alien.png */,
+				CAA5C4851A2FEF5C00DD455F /* power_green.png */,
+				CAA5C4861A2FEF5C00DD455F /* power_red.png */,
+			);
+			path = "sprite object";
+			sourceTree = "<group>";
+		};
+		CAA5C48C1A2FEF7600DD455F /* meteorites */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5C48D1A2FEF7600DD455F /* meteorite_0.png */,
+				CAA5C48E1A2FEF7600DD455F /* meteorite_1.png */,
+				CAA5C48F1A2FEF7600DD455F /* meteorite_10.png */,
+				CAA5C4901A2FEF7600DD455F /* meteorite_2.png */,
+				CAA5C4911A2FEF7600DD455F /* meteorite_3.png */,
+				CAA5C4921A2FEF7600DD455F /* meteorite_4.png */,
+				CAA5C4931A2FEF7600DD455F /* meteorite_5.png */,
+				CAA5C4941A2FEF7600DD455F /* meteorite_6.png */,
+				CAA5C4951A2FEF7600DD455F /* meteorite_7.png */,
+			);
+			path = meteorites;
+			sourceTree = "<group>";
+		};
+		CAA5C49F1A2FEF8300DD455F /* ufo */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5C4A11A2FEF8300DD455F /* ufo_0.png */,
+				CAA5C4A21A2FEF8300DD455F /* ufo_1.png */,
+				CAA5C4A31A2FEF8300DD455F /* ufo_2.png */,
+				CAA5C4A41A2FEF8300DD455F /* ufo_3.png */,
+			);
+			path = ufo;
+			sourceTree = "<group>";
+		};
+		CAA5C4AD1A2FEFEB00DD455F /* limiters */ = {
+			isa = PBXGroup;
+			children = (
+				CA5F2E4B1A301B93006F9F56 /* groundRock2.png */,
+				CAA5C4AE1A2FEFEB00DD455F /* groundRock.png */,
+			);
+			path = limiters;
+			sourceTree = "<group>";
+		};
+		CAA5C4B01A2FF00C00DD455F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5C4B11A2FF02000DD455F /* Controllers */,
+				CAA5C4B21A2FF03000DD455F /* Helpers */,
+				CAA5C4B31A2FF04600DD455F /* Models */,
+				CAA5C4B41A2FF05000DD455F /* Scenes */,
+				CA6C4BB31A2FF0EC0075918E /* Others */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		CAA5C4B11A2FF02000DD455F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC6411A1E8CC6005A8C66 /* GameViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CAA5C4B21A2FF03000DD455F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3F54E2A21A2E7D19006590BD /* singleton.swift */,
+				CA6C4BBF1A2FF68B0075918E /* math.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CAA5C4B31A2FF04600DD455F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C4BC11A2FF70E0075918E /* score.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CAA5C4B41A2FF05000DD455F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3FACC63F1A1E8CC6005A8C66 /* GameScene.swift */,
+				3F5B69A31A2E90B0003C26D4 /* SceneDelegate.swift */,
+				CA29304F1A2FF0860094CD34 /* Nodes */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FACC6351A1E8CC6005A8C66 /* Space Jumper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FACC6591A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space Jumper" */;
+			buildPhases = (
+				3FACC6321A1E8CC6005A8C66 /* Sources */,
+				3FACC6331A1E8CC6005A8C66 /* Frameworks */,
+				3FACC6341A1E8CC6005A8C66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Space Jumper";
+			productName = "Space Jumper";
+			productReference = 3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FACC64E1A1E8CC6005A8C66 /* Space JumperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FACC65C1A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space JumperTests" */;
+			buildPhases = (
+				3FACC64B1A1E8CC6005A8C66 /* Sources */,
+				3FACC64C1A1E8CC6005A8C66 /* Frameworks */,
+				3FACC64D1A1E8CC6005A8C66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FACC6511A1E8CC6005A8C66 /* PBXTargetDependency */,
+			);
+			name = "Space JumperTests";
+			productName = "Space JumperTests";
+			productReference = 3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FACC62E1A1E8CC6005A8C66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Urban Games";
+				TargetAttributes = {
+					3FACC6351A1E8CC6005A8C66 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 6QN349HHUB;
+					};
+					3FACC64E1A1E8CC6005A8C66 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3FACC6351A1E8CC6005A8C66;
+					};
+				};
+			};
+			buildConfigurationList = 3FACC6311A1E8CC6005A8C66 /* Build configuration list for PBXProject "Space Jumper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FACC62D1A1E8CC6005A8C66;
+			productRefGroup = 3FACC6371A1E8CC6005A8C66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FACC6351A1E8CC6005A8C66 /* Space Jumper */,
+				3FACC64E1A1E8CC6005A8C66 /* Space JumperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FACC6341A1E8CC6005A8C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAA5C4A71A2FEF8300DD455F /* ufo_1.png in Resources */,
+				CAA5C4A51A2FEF8300DD455F /* Space3.png in Resources */,
+				CAA5C49A1A2FEF7600DD455F /* meteorite_3.png in Resources */,
+				CAA5C49C1A2FEF7600DD455F /* meteorite_5.png in Resources */,
+				CAA5C4971A2FEF7600DD455F /* meteorite_1.png in Resources */,
+				CAA5C48B1A2FEF5C00DD455F /* power_red.png in Resources */,
+				CAA5C4771A2FEF2B00DD455F /* Space5.png in Resources */,
+				CAA5C47F1A2FEF4100DD455F /* enemy_2.png in Resources */,
+				CAA5C4881A2FEF5C00DD455F /* Blue_Alien.png in Resources */,
+				CA6C4BBE1A2FF3AA0075918E /* placeholder_get_ready@2x.png in Resources */,
+				CAA5C4A81A2FEF8300DD455F /* ufo_2.png in Resources */,
+				CAA5C4891A2FEF5C00DD455F /* Pink_Alien.png in Resources */,
+				CAA5C4981A2FEF7600DD455F /* meteorite_10.png in Resources */,
+				CAA5C48A1A2FEF5C00DD455F /* power_green.png in Resources */,
+				3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */,
+				CAA5C4871A2FEF5C00DD455F /* Alien.png in Resources */,
+				CAA5C4761A2FEF2B00DD455F /* Space4.png in Resources */,
+				CAA5C4801A2FEF4100DD455F /* enemy_3.png in Resources */,
+				3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */,
+				CAA5C49E1A2FEF7600DD455F /* meteorite_7.png in Resources */,
+				CAA5C47D1A2FEF4100DD455F /* enemy_0.png in Resources */,
+				CAA5C47E1A2FEF4100DD455F /* enemy_1.png in Resources */,
+				CAA5C4751A2FEF2B00DD455F /* Space2.jpg in Resources */,
+				CAA5C4961A2FEF7600DD455F /* meteorite_0.png in Resources */,
+				CA6C4BBD1A2FF3AA0075918E /* placeholder_game_over@2x.png in Resources */,
+				CAA5C4A91A2FEF8300DD455F /* ufo_3.png in Resources */,
+				CAA5C4A61A2FEF8300DD455F /* ufo_0.png in Resources */,
+				CAA5C49B1A2FEF7600DD455F /* meteorite_4.png in Resources */,
+				CAA5C4741A2FEF2B00DD455F /* Space.jpg in Resources */,
+				3FACC6451A1E8CC6005A8C66 /* Main.storyboard in Resources */,
+				CA5F2E4C1A301B93006F9F56 /* groundRock2.png in Resources */,
+				CAA5C49D1A2FEF7600DD455F /* meteorite_6.png in Resources */,
+				CAA5C4991A2FEF7600DD455F /* meteorite_2.png in Resources */,
+				CAA5C4AF1A2FEFEB00DD455F /* groundRock.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FACC64D1A1E8CC6005A8C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FACC6321A1E8CC6005A8C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FACC6401A1E8CC6005A8C66 /* GameScene.swift in Sources */,
+				CA6C4BC21A2FF70E0075918E /* score.swift in Sources */,
+				CA6C4BC81A2FFD390075918E /* JumperNode.swift in Sources */,
+				CA6C4BC41A2FF7780075918E /* SKScrollingNode.swift in Sources */,
+				CA6C4BC01A2FF68B0075918E /* math.swift in Sources */,
+				CA6C4BC61A2FF9B40075918E /* Constants.swift in Sources */,
+				3F54E2A31A2E7D19006590BD /* singleton.swift in Sources */,
+				3FACC6421A1E8CC6005A8C66 /* GameViewController.swift in Sources */,
+				3FACC63C1A1E8CC6005A8C66 /* AppDelegate.swift in Sources */,
+				3F5B69A41A2E90B0003C26D4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FACC64B1A1E8CC6005A8C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FACC6561A1E8CC6005A8C66 /* Space_JumperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FACC6511A1E8CC6005A8C66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FACC6351A1E8CC6005A8C66 /* Space Jumper */;
+			targetProxy = 3FACC6501A1E8CC6005A8C66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3FACC6431A1E8CC6005A8C66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FACC6441A1E8CC6005A8C66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FACC6491A1E8CC6005A8C66 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FACC6571A1E8CC6005A8C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FACC6581A1E8CC6005A8C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FACC65A1A1E8CC6005A8C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Space Jumper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		3FACC65B1A1E8CC6005A8C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Space Jumper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		3FACC65D1A1E8CC6005A8C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Space JumperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Jumper.app/Space Jumper";
+			};
+			name = Debug;
+		};
+		3FACC65E1A1E8CC6005A8C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Space JumperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Jumper.app/Space Jumper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FACC6311A1E8CC6005A8C66 /* Build configuration list for PBXProject "Space Jumper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FACC6571A1E8CC6005A8C66 /* Debug */,
+				3FACC6581A1E8CC6005A8C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FACC6591A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space Jumper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FACC65A1A1E8CC6005A8C66 /* Debug */,
+				3FACC65B1A1E8CC6005A8C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FACC65C1A1E8CC6005A8C66 /* Build configuration list for PBXNativeTarget "Space JumperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FACC65D1A1E8CC6005A8C66 /* Debug */,
+				3FACC65E1A1E8CC6005A8C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FACC62E1A1E8CC6005A8C66 /* Project object */;
+}

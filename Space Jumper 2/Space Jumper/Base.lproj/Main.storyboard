@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="CtS-rA-C9T">
+            <objects>
+                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModule="Space_Jumper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
+                        <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiX-0V-DUg" userLabel="gameOverView">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_game_over.png" translatesAutoresizingMaskIntoConstraints="NO" id="gWE-kb-GFy" userLabel="gameOverImage">
+                                        <rect key="frame" x="20" y="0.0" width="260" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="JSo-Ze-nEh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGn-kC-E6m" userLabel="Score">
+                                        <rect key="frame" x="129" y="69" width="45" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gWE-kb-GFy" firstAttribute="centerX" secondItem="wiX-0V-DUg" secondAttribute="centerX" id="9vB-B3-1mJ"/>
+                                    <constraint firstItem="VGn-kC-E6m" firstAttribute="top" secondItem="gWE-kb-GFy" secondAttribute="bottom" constant="24" id="Aap-EM-JyT"/>
+                                    <constraint firstItem="gWE-kb-GFy" firstAttribute="leading" secondItem="wiX-0V-DUg" secondAttribute="leading" constant="20" id="E1n-QA-XFC"/>
+                                    <constraint firstItem="gWE-kb-GFy" firstAttribute="top" secondItem="wiX-0V-DUg" secondAttribute="top" id="Hsj-3J-Zmy"/>
+                                    <constraint firstItem="VGn-kC-E6m" firstAttribute="leading" secondItem="wiX-0V-DUg" secondAttribute="leading" constant="129" id="z5r-FT-Dvm"/>
+                                </constraints>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrY-D7-oC7" userLabel="menuView">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_get_ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="WyC-nf-Kbh" userLabel="mainMenuImage">
+                                        <rect key="frame" x="20" y="0.0" width="260" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3cQ-d7-Zvg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="WyC-nf-Kbh" firstAttribute="top" secondItem="XrY-D7-oC7" secondAttribute="top" id="0aV-ei-luD"/>
+                                    <constraint firstItem="WyC-nf-Kbh" firstAttribute="leading" secondItem="XrY-D7-oC7" secondAttribute="leading" constant="20" id="3tm-gz-wAN"/>
+                                    <constraint firstItem="WyC-nf-Kbh" firstAttribute="centerX" secondItem="XrY-D7-oC7" secondAttribute="centerX" id="FyL-Pk-9hS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XrY-D7-oC7" firstAttribute="bottom" secondItem="wiX-0V-DUg" secondAttribute="bottom" id="IUk-8E-ncF"/>
+                            <constraint firstItem="XrY-D7-oC7" firstAttribute="leading" secondItem="wiX-0V-DUg" secondAttribute="leading" id="RVN-Em-mo3"/>
+                            <constraint firstItem="XrY-D7-oC7" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" constant="150" id="UwR-lW-Uhz"/>
+                            <constraint firstItem="wiX-0V-DUg" firstAttribute="trailing" secondItem="XrY-D7-oC7" secondAttribute="trailing" id="X7N-xd-pko"/>
+                            <constraint firstAttribute="centerX" secondItem="wiX-0V-DUg" secondAttribute="centerX" id="Ykg-Ea-zms"/>
+                            <constraint firstAttribute="centerY" secondItem="wiX-0V-DUg" secondAttribute="centerY" id="c5m-Gi-I1N"/>
+                            <constraint firstItem="XrY-D7-oC7" firstAttribute="top" secondItem="wiX-0V-DUg" secondAttribute="top" id="x5i-oH-xUx"/>
+                            <constraint firstItem="wiX-0V-DUg" firstAttribute="top" secondItem="PCf-gQ-wO7" secondAttribute="bottom" constant="150" id="yCB-O2-LCj"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="gameOverImage" destination="gWE-kb-GFy" id="QOQ-XC-uXp"/>
+                        <outlet property="gameOverView" destination="wiX-0V-DUg" id="HHX-4e-Gvb"/>
+                        <outlet property="mainMenuImage" destination="WyC-nf-Kbh" id="x6b-dg-egx"/>
+                        <outlet property="menuView" destination="XrY-D7-oC7" id="2zY-tj-8az"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="-83"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder_game_over.png" width="198" height="38"/>
+        <image name="placeholder_get_ready.png" width="130" height="40"/>
+    </resources>
+</document>
