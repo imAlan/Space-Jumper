@@ -75,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         inGame = true
         initSetup()
         setupBackground()
-        setupScore()
+        //setupScore()
         setupJumper()
         setupGround()
         
@@ -91,6 +91,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // set score to 0
         currentScore = 0
         
+        // Setup PowerUp Timer
+        powerUpTimer = 0
+        
         // movement initial
         distanceToMove = CGFloat(self.frame.size.width)
         moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.01 * distanceToMove))
@@ -99,7 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupBackground(){
-        back1 = SKScrollingNode.scrollingNode("Space2.jpg", containerWidth:self.frame.size.width, containerHeight:self.frame.size.height);
+        back1 = SKScrollingNode.scrollingNode("Space.jpg", containerWidth:self.frame.size.width, containerHeight:self.frame.size.height);
         //self.setScale(2.0);
         back1!.scrollingSpeed = BACK1_SCROLLING_SPEED;
         back1!.anchorPoint = CGPointZero;
@@ -119,8 +122,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupJumper(){
+        println("setup jumper")
         jumper = JumperNode.instance();
-        jumper!.position = CGPointMake(100, CGRectGetMidY(self.frame));
+        jumper!.position = CGPointMake(100, CGRectGetMidY(self.frame)/1.25);
         jumper!.name = "jumper";
         jumper.setScale(0.3);
         self.addChild(jumper!);
@@ -141,9 +145,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         jumpOffPad.physicsBody = SKPhysicsBody(rectangleOfSize: jumpOffPad.size)
         jumpOffPad.physicsBody?.dynamic = false
-        jumpOffPad.physicsBody?.categoryBitMask = Constants.METEORITE_BIT_MASK
-        jumpOffPad.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
-        jumpOffPad.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
+//        jumpOffPad.physicsBody?.categoryBitMask = Constants.METEORITE_BIT_MASK
+//        jumpOffPad.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
+//        jumpOffPad.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
         
         // Lower Ground
         var groundTextureLower = SKTexture(imageNamed: "groundRock2")
@@ -209,6 +213,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         meteor.position = CGPointMake(self.frame.size.width + meteor.size.width/2.0,
                                       (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
         meteor.physicsBody = SKPhysicsBody(rectangleOfSize: meteor.size)
+        meteor.physicsBody?.categoryBitMask = Constants.METEORITE_BIT_MASK
+        meteor.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
+        meteor.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
         meteor.physicsBody?.dynamic = false
         var rotateMeteorite = SKAction.rotateByAngle(CGFloat(-M_PI/2.5 ), duration: 1.0)
         var rotateMeteoriteForever = SKAction.repeatActionForever(rotateMeteorite)
@@ -270,6 +277,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ufo.physicsBody = SKPhysicsBody(rectangleOfSize: ufo.size)
         ufo2.physicsBody = SKPhysicsBody(rectangleOfSize: ufo2.size)
         
+        ufo.physicsBody?.categoryBitMask = Constants.METEORITE_BIT_MASK
+        ufo.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
+        ufo.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
+        
+        ufo2.physicsBody?.categoryBitMask = Constants.METEORITE_BIT_MASK
+        ufo2.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
+        ufo2.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
+        
         ufo.physicsBody?.dynamic = false
         ufo2.physicsBody?.dynamic = false
         
@@ -327,6 +342,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
         powerUp.physicsBody = SKPhysicsBody(rectangleOfSize: powerUp.size)
         
+        powerUp.physicsBody?.categoryBitMask = Constants.POWERUP_BIT_MASK
+        powerUp.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
+        powerUp.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
         // so it doesn't collide with other stuff
         powerUp.physicsBody?.dynamic = false
         
@@ -337,13 +355,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnPowerups()
     {
         var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var num = Int(powerup_random * 20)
+        var num = Int(powerup_random * 2)
         //println(num)
-        if num == 5
+        if num == 0
         {
             spawnColorPowerUp(0)
         }
-        else if num == 10
+        else if num == 1
         {
             spawnColorPowerUp(1)
         }
@@ -368,8 +386,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBeginContact(contact:SKPhysicsContact)
     {
         println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
-        if(contact.bodyA.node!.name! == "meteor" || contact.bodyA.node!.name! == "ufo" || contact.bodyA.node!.name! == "ground" && contact.bodyB.node!.name! == "jumper")
+        if(
+            ((contact.bodyB.node!.name! == "meteor" || contact.bodyB.node!.name! == "ufo" || contact.bodyB.node!.name! == "ground" ) && contact.bodyA.node!.name! == "jumper")
+            ||
+            ((contact.bodyA.node!.name! == "meteor" || contact.bodyA.node!.name! == "ufo" || contact.bodyA.node!.name! == "ground" ) && contact.bodyB.node!.name! == "jumper")
+        )
         {
+            println("collision jumper")
             if(!jumperDeath) {
                 jumperDeath = true;
                 inGame = false;
@@ -379,7 +402,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
-        if(contact.bodyA.node!.name! == "red_powerup" && contact.bodyB.node!.name! == "jumper")
+        
+        if ((contact.bodyA.node!.name! == "red_powerup" && contact.bodyB.node!.name! == "jumper")
+            ||
+            (contact.bodyB.node!.name! == "red_powerup" && contact.bodyA.node!.name! == "jumper"))
         {
             // powered up; make alien smaller
             poweredUp = true
@@ -388,7 +414,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             jumper.physicsBody?.dynamic = true
             powerUpTimer = 400
         }
-        if(contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper")
+        
+        if ((contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper")
+            ||
+            (contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper"))
         {
             // powered up; make alien bigger
             poweredUp = true
@@ -438,7 +467,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 spawnPowerups()
                 count = 0
             }
-        
+            println(powerUpTimer)
             if (powerUpTimer > 0){
                 powerUpTimer--
             }
