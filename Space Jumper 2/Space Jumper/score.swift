@@ -19,6 +19,7 @@ struct score {
         }
     }
     
+    // If reset is True then set best score to 0
     static func setBestScore(bestScore: Int, reset: Bool = false) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if reset{

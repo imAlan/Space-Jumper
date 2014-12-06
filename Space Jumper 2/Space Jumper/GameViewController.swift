@@ -65,9 +65,11 @@ class GameViewController: UIViewController, SceneDelegate {
         
         // make scene
         let skView = view as SKView
-        skView.showsNodeCount = true
-        skView.showsFPS = true
-        skView.showsPhysics = true
+        
+        //Debugging Code, shows collision box
+        //skView.showsNodeCount = true
+        //skView.showsFPS = true
+        //skView.showsPhysics = true
         
         self.scene = GameScene(size: skView.bounds.size)
         self.scene!.scaleMode = .AspectFill

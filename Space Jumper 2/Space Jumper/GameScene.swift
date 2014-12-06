@@ -89,11 +89,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Physics
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
 
-        // set score to 0
+        // Set score to 0
         currentScore = 0
         
         // Setup PowerUp Timer
         powerUpTimer = 0
+        
+        // Setup Difficulty
+        limit = 60
         
         // movement initial
         distanceToMove = CGFloat(self.frame.size.width)
@@ -472,7 +475,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 spawnPowerups()
                 count = 0
             }
-            println(powerUpTimer)
+            //println(powerUpTimer)
             if (powerUpTimer > 0){
                 powerUpTimer--
             }
