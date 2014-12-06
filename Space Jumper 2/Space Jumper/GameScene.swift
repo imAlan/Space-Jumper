@@ -79,13 +79,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupScore()
         setupJumper()
         setupGround()
-        
         if(self.sceneDelegate != nil) {
             self.sceneDelegate!.eventStart();
         }
     }
     
     func initSetup(){
+        println("initial setup")
         //Physics
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
 
@@ -97,6 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Setup Difficulty
         limit = 60
+        current_time = 0.0
         
         // movement initial
         distanceToMove = CGFloat(self.frame.size.width)
@@ -160,7 +161,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ground.name = "ground"
         ground.setScale(0.85)
         self.addChild(ground)
-        ground.position = CGPointMake(CGRectGetMidX(self.frame), 0)
+        ground.position = CGPointMake(CGRectGetMidX(self.frame), 0 - ground.size.height/6)
         ground.physicsBody = SKPhysicsBody(rectangleOfSize: ground.size)
         ground.physicsBody?.categoryBitMask = Constants.GROUND_BIT_MASK
         ground.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
@@ -172,7 +173,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ground2.name = "ground"
         ground2.setScale(0.85)
         self.addChild(ground2)
-        ground2.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height)
+        ground2.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height + ground2.size.height/4)
         ground2.physicsBody = SKPhysicsBody(rectangleOfSize: ground2.size)
         ground2.physicsBody?.categoryBitMask = Constants.GROUND_BIT_MASK
         ground2.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
@@ -202,21 +203,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         {
             size_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         }
-        meteor.setScale(0.7 * size_random)
+        meteor.setScale(0.6 * size_random)
         
         // controlling meteor movements
         distanceToMove = CGFloat(self.frame.size.width + (1.0 * meteor.size.width))
         
         // randomize speed
-        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.005 * size_random * distanceToMove))
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.004 * size_random * distanceToMove))
         removeObject = SKAction.removeFromParent()
         objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
         
         
         // randomize y position (self.frame.size.height/2.0)
         meteor.position = CGPointMake(self.frame.size.width + meteor.size.width/2.0,
-                                      (self.frame.size.height * 1/2 * position_random) + self.frame.size.height * 1/4)
-        meteor.physicsBody = SKPhysicsBody(rectangleOfSize: meteor.size)
+                                      (self.frame.size.height * 3/4 * position_random) + self.frame.size.height * 1/8)
+        meteor.physicsBody = SKPhysicsBody(circleOfRadius: meteor.size.width / 2)
         meteor.physicsBody?.categoryBitMask = Constants.METEORITE_BIT_MASK
         meteor.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
         meteor.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
@@ -253,16 +254,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(ufo2)
         
         ufo.physicsBody?.categoryBitMask = Constants.DEADLYMETEORITE_BIT_MASK
-        ufo.setScale(1.0)
+        ufo.setScale(0.6)
         
         ufo2.physicsBody?.categoryBitMask = Constants.DEADLYMETEORITE_BIT_MASK
-        ufo2.setScale(1.0)
+        ufo2.setScale(0.6)
         
         // controlling meteor movements
         distanceToMove = CGFloat(self.frame.size.width + 1.0 * ufo.size.width)
         
         // randomize speed
-        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.0025 * distanceToMove))
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.003 * distanceToMove))
         removeObject = SKAction.removeFromParent()
         objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
         
@@ -274,12 +275,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // randomize y position (self.frame.size.height/2.0)
        
-        var yposition_random = abs((self.frame.size.height - (self.frame.size.height/2.5) - ufo.size.height * 3.2) * position_random) + ufo.size.height * 1.6
+        var yposition_random = abs((self.frame.size.height - (self.frame.size.height/2.25) - ufo.size.height * 3.2) * position_random) + ufo.size.height * 1.6
         ufo.position = CGPointMake(self.frame.size.width + ufo.size.width/2.0, yposition_random)
         //println(yposition_random)
-        ufo2.position = CGPointMake(self.frame.size.width + ufo.size.width/2.0, yposition_random + self.frame.size.height/2.5)
-        ufo.physicsBody = SKPhysicsBody(rectangleOfSize: ufo.size)
-        ufo2.physicsBody = SKPhysicsBody(rectangleOfSize: ufo2.size)
+        ufo2.position = CGPointMake(self.frame.size.width + ufo.size.width/2.0, yposition_random + self.frame.size.height/2.25)
+        ufo.physicsBody = SKPhysicsBody(circleOfRadius: ufo.size.width / 2)
+        ufo2.physicsBody = SKPhysicsBody(circleOfRadius: ufo2.size.width / 2)
         
         ufo.physicsBody?.categoryBitMask = Constants.METEORITE_BIT_MASK
         ufo.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
@@ -318,7 +319,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var powerUpTexture = SKTexture(imageNamed: powerUpFile)
         
         let powerUp = SKSpriteNode(texture: powerUpTexture)
-        powerUp.setScale(1.0)
+        powerUp.setScale(0.65)
         // set bitmask
         powerUp.physicsBody?.categoryBitMask = Constants.POWERUP_BIT_MASK
         
@@ -359,7 +360,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnPowerups()
     {
         var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var num = Int(powerup_random * 2)
+        var num = Int(powerup_random * 3)
         //println(num)
         if num == 0
         {
@@ -369,7 +370,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         {
             spawnColorPowerUp(1)
         }
-        else if num == 15
+        else if num == 2
         {
             spawnUFO()
         }
@@ -468,7 +469,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             diff_sec = Int((currentTime - current_time)/1.5)
         
-            //println("limit: \(limit)  count: \(count)")
+            println("limit: \(limit)  count: \(count)")
             count++
             if (count == limit || count > limit){
                 spawnMeteorites()
