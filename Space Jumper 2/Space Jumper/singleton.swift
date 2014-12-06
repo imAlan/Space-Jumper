@@ -18,7 +18,7 @@ class singleton
         }
         return Singleton.instance
     }
-    var score = 0
+    var current_score = 0
 }
 
 let instance = singleton.sharedInstance

@@ -10,16 +10,23 @@ import Foundation
 
 import Foundation
 
-struct score {
+struct score {    
     static func registerScore(tscore: Int) {
+        println(tscore)
         if(tscore > score.bestScore()) {
+            var reset1 = true
             setBestScore(tscore)
         }
     }
     
-    static func setBestScore(bestScore: Int) {
+    static func setBestScore(bestScore: Int, reset: Bool = false) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setInteger(bestScore, forKey: "bestScore")
+        if reset{
+            userDefaults.setInteger(0, forKey: "bestScore")
+        }
+        else{
+            userDefaults.setInteger(bestScore, forKey: "bestScore")
+        }
         userDefaults.synchronize()
     }
     

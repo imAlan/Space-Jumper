@@ -398,6 +398,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 jumperDeath = true;
                 inGame = false;
                 score.registerScore(currentScore);
+                instance.current_score = currentScore
                 if(self.sceneDelegate != nil) {
                     self.sceneDelegate!.eventJumperDeath();
                 }

@@ -40,6 +40,8 @@ class GameViewController: UIViewController, SceneDelegate {
     @IBOutlet
     var gameOverImage: UIImageView!
     
+    @IBOutlet var BestScoreLabel: UILabel!
+    @IBOutlet var ScoreLabel: UILabel!
     var scene: GameScene?
     var flash: UIView?
     
@@ -102,7 +104,7 @@ class GameViewController: UIViewController, SceneDelegate {
         self.flash!.alpha = 0.9
         
         self.shakeFrame()
-        
+        //println(Score.bestScore())
         UIView.animateWithDuration(0.6, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             // Display game over
             self.flash!.alpha = 0.4
@@ -111,7 +113,8 @@ class GameViewController: UIViewController, SceneDelegate {
             
             // Set scores
             //self.currentScore.text = NSString(format: "%li", self.scene!.score)
-            //self.bestScoreLabel.text = NSString(format: "%li", Score.bestScore())
+            self.ScoreLabel.text = NSString(format: "Score: %li", instance.current_score)
+            self.BestScoreLabel.text = NSString(format: "Best Score: %li", score.bestScore())
             },
             completion: {(Bool) -> Void in self.flash!.userInteractionEnabled = false})
     }
