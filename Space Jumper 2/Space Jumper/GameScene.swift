@@ -25,6 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var poweredUp = false
     var jumperDeath = false
     var inGame = false
+    var gameStarted = false
     
     // background
     var back1: SKScrollingNode?
@@ -75,7 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         inGame = true
         initSetup()
         setupBackground()
-        //setupScore()
+        setupScore()
         setupJumper()
         setupGround()
         
@@ -141,7 +142,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumpOffPad.position = CGPointMake(self.frame.width/7, self.frame.height/4)
         jumpOffPad.setScale(0.75)
         
-        jumpOffPad.runAction(objectMoveAndRemove)
+        //jumpOffPad.runAction(objectMoveAndRemove)
         
         jumpOffPad.physicsBody = SKPhysicsBody(rectangleOfSize: jumpOffPad.size)
         jumpOffPad.physicsBody?.dynamic = false
@@ -431,7 +432,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         if(jumperDeath) {
             startGame();
+            gameStarted = false
         } else {
+            gameStarted = true
+            jumpOffPad.runAction(objectMoveAndRemove)
             jumper!.startPlaying();
             self.sceneDelegate!.eventPlay();
             jumper!.move();
@@ -447,11 +451,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Called before each frame is rendered */
         // spawn meteors every 5 frames
         
-        if (inGame){
+        if (inGame && gameStarted){
             updateScore()
         }
         
-        if(!jumperDeath) {
+        if(!jumperDeath && gameStarted) {
             back1!.update(currentTime);
             jumper!.update(currentTime);
 
