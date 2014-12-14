@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -16,22 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiX-0V-DUg" userLabel="gameOverView">
-                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wiX-0V-DUg" userLabel="gameOverView">
+                                <rect key="frame" x="150" y="256" width="300" height="90"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gameover1_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gWE-kb-GFy" userLabel="gameOverImage">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gameover1_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gWE-kb-GFy" userLabel="gameOverImage">
                                         <rect key="frame" x="20" y="0.0" width="260" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="JSo-Ze-nEh"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGn-kC-E6m" userLabel="Score">
-                                        <rect key="frame" x="129" y="69" width="45" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGn-kC-E6m" userLabel="Score">
+                                        <rect key="frame" x="129" y="69" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-1k-srb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Best Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-1k-srb">
                                         <rect key="frame" x="104" y="140" width="249" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -44,11 +45,14 @@
                                     <constraint firstItem="VGn-kC-E6m" firstAttribute="top" secondItem="gWE-kb-GFy" secondAttribute="bottom" constant="24" id="Aap-EM-JyT"/>
                                     <constraint firstItem="gWE-kb-GFy" firstAttribute="leading" secondItem="wiX-0V-DUg" secondAttribute="leading" constant="20" id="E1n-QA-XFC"/>
                                     <constraint firstItem="gWE-kb-GFy" firstAttribute="top" secondItem="wiX-0V-DUg" secondAttribute="top" id="Hsj-3J-Zmy"/>
-                                    <constraint firstItem="VGn-kC-E6m" firstAttribute="leading" secondItem="wiX-0V-DUg" secondAttribute="leading" constant="129" id="z5r-FT-Dvm"/>
+                                    <constraint firstAttribute="centerX" secondItem="VGn-kC-E6m" secondAttribute="centerX" id="YY5-ef-TLf"/>
+                                    <constraint firstItem="gWE-kb-GFy" firstAttribute="centerX" secondItem="cJZ-1k-srb" secondAttribute="centerX" id="ZCt-dw-qVn"/>
+                                    <constraint firstItem="cJZ-1k-srb" firstAttribute="top" secondItem="VGn-kC-E6m" secondAttribute="bottom" constant="24" id="Zsy-O2-a91"/>
+                                    <constraint firstAttribute="centerY" secondItem="gWE-kb-GFy" secondAttribute="centerY" multiplier="3" id="cSJ-1j-J2e"/>
                                 </constraints>
                             </view>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrY-D7-oC7" userLabel="menuView">
-                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrY-D7-oC7" userLabel="menuView">
+                                <rect key="frame" x="150" y="256" width="300" height="90"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getready1_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="WyC-nf-Kbh" userLabel="mainMenuImage">
                                         <rect key="frame" x="20" y="0.0" width="260" height="45"/>
@@ -74,7 +78,6 @@
                             <constraint firstAttribute="centerX" secondItem="wiX-0V-DUg" secondAttribute="centerX" id="Ykg-Ea-zms"/>
                             <constraint firstAttribute="centerY" secondItem="wiX-0V-DUg" secondAttribute="centerY" id="c5m-Gi-I1N"/>
                             <constraint firstItem="XrY-D7-oC7" firstAttribute="top" secondItem="wiX-0V-DUg" secondAttribute="top" id="x5i-oH-xUx"/>
-                            <constraint firstItem="wiX-0V-DUg" firstAttribute="top" secondItem="PCf-gQ-wO7" secondAttribute="bottom" constant="150" id="yCB-O2-LCj"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
