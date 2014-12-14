@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>916D829A097692452D728AE148279105D9D1B2AD</key>
-		<string>https://github.com/welldefinedvariables/Space-Jumper.git</string>
+		<string>https://github.com/imAlan/Space-Jumper.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Space Jumper.xcodeproj</string>
+	<string>Space Jumper 2/Space Jumper.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>916D829A097692452D728AE148279105D9D1B2AD</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/welldefinedvariables/Space-Jumper.git</string>
+	<string>https://github.com/imAlan/Space-Jumper.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
