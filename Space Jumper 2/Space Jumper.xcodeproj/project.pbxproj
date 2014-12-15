@@ -16,6 +16,7 @@
 		3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6461A1E8CC6005A8C66 /* Images.xcassets */; };
 		3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */; };
 		3FACC6561A1E8CC6005A8C66 /* Space_JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */; };
+		5E4219621A3F7E1000A8CD6B /* aaa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E4219611A3F7E1000A8CD6B /* aaa.wav */; };
 		5E49E0821A3DFFB30047E7D2 /* Gameover1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E0791A3DFFB30047E7D2 /* Gameover1_1.png */; };
 		5E49E0831A3DFFB30047E7D2 /* Gameover1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E07A1A3DFFB30047E7D2 /* Gameover1.png */; };
 		5E49E0841A3DFFB30047E7D2 /* Gameover2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E07B1A3DFFB30047E7D2 /* Gameover2_1.png */; };
@@ -25,6 +26,8 @@
 		5E49E0881A3DFFB30047E7D2 /* getready2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E07F1A3DFFB30047E7D2 /* getready2_2.png */; };
 		5E49E0891A3DFFB30047E7D2 /* getready2_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E0801A3DFFB30047E7D2 /* getready2_3.png */; };
 		5E49E08A1A3DFFB30047E7D2 /* getready2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E0811A3DFFB30047E7D2 /* getready2.png */; };
+		5E49E08C1A3F74710047E7D2 /* F-777DoubleJump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E08B1A3F74710047E7D2 /* F-777DoubleJump.mp3 */; };
+		5E49E08E1A3F74720047E7D2 /* move.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E08D1A3F74720047E7D2 /* move.wav */; };
 		CA5F2E4C1A301B93006F9F56 /* groundRock2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5F2E4B1A301B93006F9F56 /* groundRock2.png */; };
 		CA6C4BBD1A2FF3AA0075918E /* placeholder_game_over@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C4BBB1A2FF3AA0075918E /* placeholder_game_over@2x.png */; };
 		CA6C4BBE1A2FF3AA0075918E /* placeholder_get_ready@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C4BBC1A2FF3AA0075918E /* placeholder_get_ready@2x.png */; };
@@ -87,6 +90,7 @@
 		3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space JumperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FACC6541A1E8CC6005A8C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_JumperTests.swift; sourceTree = "<group>"; };
+		5E4219611A3F7E1000A8CD6B /* aaa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = aaa.wav; sourceTree = "<group>"; };
 		5E49E0791A3DFFB30047E7D2 /* Gameover1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gameover1_1.png; sourceTree = "<group>"; };
 		5E49E07A1A3DFFB30047E7D2 /* Gameover1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gameover1.png; sourceTree = "<group>"; };
 		5E49E07B1A3DFFB30047E7D2 /* Gameover2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gameover2_1.png; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		5E49E07F1A3DFFB30047E7D2 /* getready2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getready2_2.png; sourceTree = "<group>"; };
 		5E49E0801A3DFFB30047E7D2 /* getready2_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getready2_3.png; sourceTree = "<group>"; };
 		5E49E0811A3DFFB30047E7D2 /* getready2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getready2.png; sourceTree = "<group>"; };
+		5E49E08B1A3F74710047E7D2 /* F-777DoubleJump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "F-777DoubleJump.mp3"; sourceTree = "<group>"; };
+		5E49E08D1A3F74720047E7D2 /* move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = move.wav; sourceTree = "<group>"; };
 		CA5F2E4B1A301B93006F9F56 /* groundRock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groundRock2.png; sourceTree = "<group>"; };
 		CA6C4BBB1A2FF3AA0075918E /* placeholder_game_over@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_game_over@2x.png"; sourceTree = "<group>"; };
 		CA6C4BBC1A2FF3AA0075918E /* placeholder_get_ready@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_get_ready@2x.png"; sourceTree = "<group>"; };
@@ -173,6 +179,9 @@
 		3FACC6381A1E8CC6005A8C66 /* Space Jumper */ = {
 			isa = PBXGroup;
 			children = (
+				5E49E08D1A3F74720047E7D2 /* move.wav */,
+				5E4219611A3F7E1000A8CD6B /* aaa.wav */,
+				5E49E08B1A3F74710047E7D2 /* F-777DoubleJump.mp3 */,
 				CA2930501A2FF09D0094CD34 /* Formatting */,
 				3FACC65F1A1E8D5A005A8C66 /* Images */,
 				CAA5C4B01A2FF00C00DD455F /* Classes */,
@@ -475,11 +484,13 @@
 				CAA5C48B1A2FEF5C00DD455F /* power_red.png in Resources */,
 				CAA5C4771A2FEF2B00DD455F /* Space5.png in Resources */,
 				CAA5C47F1A2FEF4100DD455F /* enemy_2.png in Resources */,
+				5E4219621A3F7E1000A8CD6B /* aaa.wav in Resources */,
 				CAA5C4881A2FEF5C00DD455F /* Blue_Alien.png in Resources */,
 				CA6C4BBE1A2FF3AA0075918E /* placeholder_get_ready@2x.png in Resources */,
 				CAA5C4A81A2FEF8300DD455F /* ufo_2.png in Resources */,
 				CAA5C4891A2FEF5C00DD455F /* Pink_Alien.png in Resources */,
 				CAA5C4981A2FEF7600DD455F /* meteorite_10.png in Resources */,
+				5E49E08E1A3F74720047E7D2 /* move.wav in Resources */,
 				CAA5C48A1A2FEF5C00DD455F /* power_green.png in Resources */,
 				5E49E0861A3DFFB30047E7D2 /* getready1_2.png in Resources */,
 				3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */,
@@ -501,6 +512,7 @@
 				CAA5C4A61A2FEF8300DD455F /* ufo_0.png in Resources */,
 				CAA5C49B1A2FEF7600DD455F /* meteorite_4.png in Resources */,
 				CAA5C4741A2FEF2B00DD455F /* Space.jpg in Resources */,
+				5E49E08C1A3F74710047E7D2 /* F-777DoubleJump.mp3 in Resources */,
 				5E49E0821A3DFFB30047E7D2 /* Gameover1_1.png in Resources */,
 				3FACC6451A1E8CC6005A8C66 /* Main.storyboard in Resources */,
 				5E49E0831A3DFFB30047E7D2 /* Gameover1.png in Resources */,

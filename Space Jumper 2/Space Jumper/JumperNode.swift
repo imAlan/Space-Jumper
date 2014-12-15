@@ -21,6 +21,7 @@ class JumperNode: SKSpriteNode {
     
     var jump: SKAction!
     var jumpForever: SKAction!
+    var jumpSound: SKAction!
     
     class func instance() -> JumperNode {
         let alienTexture1 = SKTexture(imageNamed: "Alien");
@@ -34,6 +35,7 @@ class JumperNode: SKSpriteNode {
         
         result.jump = SKAction.animateWithTextures([alienTexture1, alienTexture2, alienTexture3], timePerFrame: 0.2)
         result.jumpForever = SKAction.repeatActionForever(result.jump);
+        result.jumpSound = SKAction.playSoundFileNamed("move.wav", waitForCompletion: false);
         
         result.runAction(result.jumpForever, withKey: "jumpForever");
         
@@ -68,6 +70,7 @@ class JumperNode: SKSpriteNode {
     
     func move() {
         if(self.physicsBody != nil) {
+            self.runAction(self.jumpSound)
             self.physicsBody!.velocity = CGVectorMake(0, 0);
             self.physicsBody!.applyImpulse(CGVectorMake(0, 20));
             self.runAction(self.jump)

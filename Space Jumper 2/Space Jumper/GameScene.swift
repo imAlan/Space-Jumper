@@ -7,6 +7,30 @@
 //
 
 import SpriteKit
+import AVFoundation
+
+var backgroundMusicPlayer: AVAudioPlayer!
+
+func playBackgroundMusic(filename: String) {
+    let url = NSBundle.mainBundle().URLForResource(
+        filename, withExtension: nil)
+    if (url == nil) {
+        println("Could not find file: \(filename)")
+        return
+    }
+    
+    var error: NSError? = nil
+    backgroundMusicPlayer =
+        AVAudioPlayer(contentsOfURL: url, error: &error)
+    if backgroundMusicPlayer == nil {
+        println("Could not create audio player: \(error!)")
+        return
+    }
+    
+    backgroundMusicPlayer.numberOfLoops = -1
+    backgroundMusicPlayer.prepareToPlay()
+    backgroundMusicPlayer.play()
+}
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     weak var gameViewController:GameViewController!
@@ -57,7 +81,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // delegates
     var sceneDelegate: SceneDelegate?
- 
+    
+    // music 
+    var place = String()
+    
     required override init(size: CGSize) {
         super.init(size: size)
         self.physicsWorld.contactDelegate = self
@@ -113,6 +140,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         back1!.anchorPoint = CGPointZero;
         back1!.setScale(0.3)
         self.addChild(self.back1!);
+        
+        // music
+        playBackgroundMusic("F-777DoubleJump.mp3")
         
         //add background 2 and 3 later
     }
@@ -398,8 +428,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         )
         {
             println("collision jumper")
+            
             if(!jumperDeath) {
                 jumperDeath = true;
+                self.runAction(SKAction.playSoundFileNamed("aaa.wav", waitForCompletion: false))
+                
                 inGame = false;
                 score.registerScore(currentScore);
                 instance.current_score = currentScore
@@ -436,6 +469,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         if(jumperDeath) {
+            
             startGame();
             gameStarted = false
         } else {
