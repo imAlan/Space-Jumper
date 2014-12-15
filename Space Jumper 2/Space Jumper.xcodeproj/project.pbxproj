@@ -28,6 +28,9 @@
 		5E49E08A1A3DFFB30047E7D2 /* getready2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E0811A3DFFB30047E7D2 /* getready2.png */; };
 		5E49E08C1A3F74710047E7D2 /* F-777DoubleJump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E08B1A3F74710047E7D2 /* F-777DoubleJump.mp3 */; };
 		5E49E08E1A3F74720047E7D2 /* move.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E08D1A3F74720047E7D2 /* move.wav */; };
+		5EA0984C1A3F860B00AB5479 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA098491A3F860B00AB5479 /* icon3.png */; };
+		5EA0984D1A3F860B00AB5479 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA0984A1A3F860B00AB5479 /* icon1.png */; };
+		5EA0984E1A3F860B00AB5479 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA0984B1A3F860B00AB5479 /* icon2.png */; };
 		CA5F2E4C1A301B93006F9F56 /* groundRock2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5F2E4B1A301B93006F9F56 /* groundRock2.png */; };
 		CA6C4BBD1A2FF3AA0075918E /* placeholder_game_over@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C4BBB1A2FF3AA0075918E /* placeholder_game_over@2x.png */; };
 		CA6C4BBE1A2FF3AA0075918E /* placeholder_get_ready@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C4BBC1A2FF3AA0075918E /* placeholder_get_ready@2x.png */; };
@@ -102,6 +105,9 @@
 		5E49E0811A3DFFB30047E7D2 /* getready2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getready2.png; sourceTree = "<group>"; };
 		5E49E08B1A3F74710047E7D2 /* F-777DoubleJump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "F-777DoubleJump.mp3"; sourceTree = "<group>"; };
 		5E49E08D1A3F74720047E7D2 /* move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = move.wav; sourceTree = "<group>"; };
+		5EA098491A3F860B00AB5479 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		5EA0984A1A3F860B00AB5479 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		5EA0984B1A3F860B00AB5479 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		CA5F2E4B1A301B93006F9F56 /* groundRock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groundRock2.png; sourceTree = "<group>"; };
 		CA6C4BBB1A2FF3AA0075918E /* placeholder_game_over@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_game_over@2x.png"; sourceTree = "<group>"; };
 		CA6C4BBC1A2FF3AA0075918E /* placeholder_get_ready@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_get_ready@2x.png"; sourceTree = "<group>"; };
@@ -193,6 +199,9 @@
 		3FACC6391A1E8CC6005A8C66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EA098491A3F860B00AB5479 /* icon3.png */,
+				5EA0984A1A3F860B00AB5479 /* icon1.png */,
+				5EA0984B1A3F860B00AB5479 /* icon2.png */,
 				3FACC63A1A1E8CC6005A8C66 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -504,13 +513,16 @@
 				CAA5C49E1A2FEF7600DD455F /* meteorite_7.png in Resources */,
 				5E49E0891A3DFFB30047E7D2 /* getready2_3.png in Resources */,
 				CAA5C47D1A2FEF4100DD455F /* enemy_0.png in Resources */,
+				5EA0984C1A3F860B00AB5479 /* icon3.png in Resources */,
 				CAA5C47E1A2FEF4100DD455F /* enemy_1.png in Resources */,
 				CAA5C4751A2FEF2B00DD455F /* Space2.jpg in Resources */,
+				5EA0984E1A3F860B00AB5479 /* icon2.png in Resources */,
 				CAA5C4961A2FEF7600DD455F /* meteorite_0.png in Resources */,
 				CA6C4BBD1A2FF3AA0075918E /* placeholder_game_over@2x.png in Resources */,
 				CAA5C4A91A2FEF8300DD455F /* ufo_3.png in Resources */,
 				CAA5C4A61A2FEF8300DD455F /* ufo_0.png in Resources */,
 				CAA5C49B1A2FEF7600DD455F /* meteorite_4.png in Resources */,
+				5EA0984D1A3F860B00AB5479 /* icon1.png in Resources */,
 				CAA5C4741A2FEF2B00DD455F /* Space.jpg in Resources */,
 				5E49E08C1A3F74710047E7D2 /* F-777DoubleJump.mp3 in Resources */,
 				5E49E0821A3DFFB30047E7D2 /* Gameover1_1.png in Resources */,
