@@ -44,7 +44,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var count = 0
     var limit = 60
     var powerUpTimer = 0
-    
+    var lastSpawn = 100
+
     // booleans
     var poweredUp = false
     var jumperDeath = false
@@ -57,6 +58,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var jumpOffPad: SKSpriteNode!
     var ground: SKSpriteNode!
     var ground2: SKSpriteNode!
+    
+    //Mini Hack
+    var star: SKSpriteNode!
+    var red: SKSpriteNode!
+    var blue: SKSpriteNode!
     
     // score
     var scoreLabel: SKLabelNode = SKLabelNode(fontNamed: "Helvetica-Bold");
@@ -353,6 +359,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var powerUpTexture = SKTexture(imageNamed: powerUpFile)
         
         let powerUp = SKSpriteNode(texture: powerUpTexture)
+        
         powerUp.setScale(0.65)
         // set bitmask
         powerUp.physicsBody?.categoryBitMask = Constants.POWERUP_BIT_MASK
@@ -361,14 +368,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if powerupNum == 0
         {
             powerUp.name = "blue_powerup"
+            blue = powerUp
         }
         else if powerupNum == 1
         {
             powerUp.name = "red_powerup"
+            red = powerUp
         }
         else if powerupNum == 2
         {
             powerUp.name = "star_gold"
+            star = powerUp
         }
         
         self.addChild(powerUp)
@@ -391,6 +401,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // so it doesn't collide with other stuff
         powerUp.physicsBody?.dynamic = false
         
+        //println(powerUp)
+        //meteors.append(powerUp)
+
         // adjust movement parameters
         powerUp.runAction(objectMoveAndRemove)
     }
@@ -398,24 +411,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnPowerups()
     {
         var powerup_random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        var num = Int(powerup_random * 3)
+        var num = Int(powerup_random * 18)
         //println(num)
-        if num == 0
+        
+        if num == 0 && lastSpawn != 0
         {
+            lastSpawn = 0
             spawnColorPowerUp(0)
         }
-        else if num == 1
+        else if num == 5 && lastSpawn != 5
         {
+            lastSpawn = 5
             spawnColorPowerUp(1)
         }
-        else if num == 2
+        else if num == 10 && lastSpawn != 10
         {
+            lastSpawn = 10
             spawnColorPowerUp(2)
         }
-        else if num == 3
+        else if num == 15 && lastSpawn != 15
         {
+            lastSpawn = 15
             spawnUFO()
         }
+        println("--\(lastSpawn)")
     }
     
     func spawnPremadeType1(){
@@ -432,7 +451,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBeginContact(contact:SKPhysicsContact)
     {
-        println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
+        //println("A:\(contact.bodyA.node!.name!)   B:\(contact.bodyB.node!.name!)")
         if(
             ((contact.bodyB.node!.name! == "meteor" || contact.bodyB.node!.name! == "ufo" || contact.bodyB.node!.name! == "ground" ) && contact.bodyA.node!.name! == "jumper")
             ||
@@ -464,6 +483,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             jumper.setScale(0.225)
             jumper.physicsBody?.dynamic = true
             powerUpTimer = 300
+            red.removeFromParent()
         }
         
         if ((contact.bodyA.node!.name! == "blue_powerup" && contact.bodyB.node!.name! == "jumper")
@@ -476,6 +496,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             jumper.setScale(0.35)
             jumper.physicsBody?.dynamic = true
             powerUpTimer = 300
+            blue.removeFromParent()
         }
         
         if ((contact.bodyA.node!.name! == "star_gold" && contact.bodyB.node!.name! == "jumper")
@@ -483,6 +504,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             (contact.bodyA.node!.name! == "jumper" && contact.bodyB.node!.name! == "star_gold"))
         {
             currentScore += 100
+            star.removeFromParent()
         }
     }
     
@@ -508,7 +530,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         // spawn meteors every 5 frames
-        
+        //println(meteors)
         if (inGame && gameStarted){
             updateScore()
         }
@@ -522,7 +544,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             diff_sec = Int((currentTime - current_time)/1.5)
         
-            println("limit: \(limit)  count: \(count)")
+            //println("limit: \(limit)  count: \(count)")
             count++
             if (count == limit || count > limit){
                 spawnMeteorites()
