@@ -339,11 +339,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if powerupNum == 0
         {
-            powerUpFile = "power_green.png"
+            powerUpFile = "power_blue.png"
         }
         else if powerupNum == 1
         {
             powerUpFile = "power_red.png"
+        }
+        else if powerupNum == 2
+        {
+            powerUpFile = "star_gold.png"
         }
         
         var powerUpTexture = SKTexture(imageNamed: powerUpFile)
@@ -356,11 +360,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // set scale
         if powerupNum == 0
         {
-            powerUp.name = "green_powerup"
+            powerUp.name = "blue_powerup"
         }
         else if powerupNum == 1
         {
             powerUp.name = "red_powerup"
+        }
+        else if powerupNum == 2
+        {
+            powerUp.name = "star_gold"
         }
         
         self.addChild(powerUp)
@@ -401,6 +409,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             spawnColorPowerUp(1)
         }
         else if num == 2
+        {
+            spawnColorPowerUp(2)
+        }
+        else if num == 3
         {
             spawnUFO()
         }
@@ -444,26 +456,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if ((contact.bodyA.node!.name! == "red_powerup" && contact.bodyB.node!.name! == "jumper")
             ||
-            (contact.bodyB.node!.name! == "red_powerup" && contact.bodyA.node!.name! == "jumper"))
+            (contact.bodyB.node!.name! == "jumper" && contact.bodyA.node!.name! == "red_powerup"))
         {
             // powered up; make alien smaller
             poweredUp = true
             jumper.texture = SKTexture(imageNamed: "Pink_Alien")
-            jumper.setScale(0.25)
+            jumper.setScale(0.225)
             jumper.physicsBody?.dynamic = true
-            powerUpTimer = 400
+            powerUpTimer = 300
         }
         
-        if ((contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper")
+        if ((contact.bodyA.node!.name! == "blue_powerup" && contact.bodyB.node!.name! == "jumper")
             ||
-            (contact.bodyA.node!.name! == "green_powerup" && contact.bodyB.node!.name! == "jumper"))
+            (contact.bodyA.node!.name! == "jumper" && contact.bodyB.node!.name! == "blue_powerup"))
         {
             // powered up; make alien bigger
             poweredUp = true
             jumper.texture = SKTexture(imageNamed: "Blue_Alien")
-            jumper.setScale(0.5)
+            jumper.setScale(0.35)
             jumper.physicsBody?.dynamic = true
-            powerUpTimer = 400
+            powerUpTimer = 300
+        }
+        
+        if ((contact.bodyA.node!.name! == "star_gold" && contact.bodyB.node!.name! == "jumper")
+            ||
+            (contact.bodyA.node!.name! == "jumper" && contact.bodyB.node!.name! == "star_gold"))
+        {
+            currentScore += 100
         }
     }
     
