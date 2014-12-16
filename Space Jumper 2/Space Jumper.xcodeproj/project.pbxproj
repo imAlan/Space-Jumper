@@ -19,7 +19,6 @@
 		3FACC6471A1E8CC6005A8C66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6461A1E8CC6005A8C66 /* Images.xcassets */; };
 		3FACC64A1A1E8CC6005A8C66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FACC6481A1E8CC6005A8C66 /* LaunchScreen.xib */; };
 		3FACC6561A1E8CC6005A8C66 /* Space_JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */; };
-		3FCF55371A407AD7003EFC61 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCF55361A407AD7003EFC61 /* Images-2.xcassets */; };
 		5E4219621A3F7E1000A8CD6B /* aaa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E4219611A3F7E1000A8CD6B /* aaa.wav */; };
 		5E49E08C1A3F74710047E7D2 /* F-777DoubleJump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E08B1A3F74710047E7D2 /* F-777DoubleJump.mp3 */; };
 		5E49E08E1A3F74720047E7D2 /* move.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E49E08D1A3F74720047E7D2 /* move.wav */; };
@@ -98,7 +97,6 @@
 		3FACC64F1A1E8CC6005A8C66 /* Space JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space JumperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FACC6541A1E8CC6005A8C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FACC6551A1E8CC6005A8C66 /* Space_JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_JumperTests.swift; sourceTree = "<group>"; };
-		3FCF55361A407AD7003EFC61 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		5E4219611A3F7E1000A8CD6B /* aaa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = aaa.wav; sourceTree = "<group>"; };
 		5E49E08B1A3F74710047E7D2 /* F-777DoubleJump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "F-777DoubleJump.mp3"; sourceTree = "<group>"; };
 		5E49E08D1A3F74720047E7D2 /* move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = move.wav; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				CA2930501A2FF09D0094CD34 /* Formatting */,
 				3FACC65F1A1E8D5A005A8C66 /* Images */,
 				CAA5C4B01A2FF00C00DD455F /* Classes */,
-				3FCF55361A407AD7003EFC61 /* Images-2.xcassets */,
 				3FACC6391A1E8CC6005A8C66 /* Supporting Files */,
 			);
 			path = "Space Jumper";
@@ -503,7 +500,6 @@
 				5E4219621A3F7E1000A8CD6B /* aaa.wav in Resources */,
 				CAA5C4881A2FEF5C00DD455F /* Blue_Alien.png in Resources */,
 				CA6C4BBE1A2FF3AA0075918E /* placeholder_get_ready@2x.png in Resources */,
-				3FCF55371A407AD7003EFC61 /* Images-2.xcassets in Resources */,
 				CAA5C4A81A2FEF8300DD455F /* ufo_2.png in Resources */,
 				CA198F4D1A402D8300CBFCDF /* tGAMEOVER3.png in Resources */,
 				CAA5C4891A2FEF5C00DD455F /* Pink_Alien.png in Resources */,
