@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F187C0F1A3FEB710086613B /* power_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F187C0E1A3FEB710086613B /* power_blue.png */; };
 		3F187C111A3FED000086613B /* star_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F187C101A3FED000086613B /* star_gold.png */; };
+		3F187C131A40059F0086613B /* red_bolt.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F187C121A40059F0086613B /* red_bolt.png */; };
 		3F54E2A31A2E7D19006590BD /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54E2A21A2E7D19006590BD /* singleton.swift */; };
 		3F5B69A41A2E90B0003C26D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B69A31A2E90B0003C26D4 /* SceneDelegate.swift */; };
 		3FACC63C1A1E8CC6005A8C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACC63B1A1E8CC6005A8C66 /* AppDelegate.swift */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		3F187C0E1A3FEB710086613B /* power_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power_blue.png; sourceTree = "<group>"; };
 		3F187C101A3FED000086613B /* star_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_gold.png; sourceTree = "<group>"; };
+		3F187C121A40059F0086613B /* red_bolt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_bolt.png; sourceTree = "<group>"; };
 		3F54E2A21A2E7D19006590BD /* singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
 		3F5B69A31A2E90B0003C26D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3FACC6361A1E8CC6005A8C66 /* Space Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Jumper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,6 +316,7 @@
 		CAA5C4811A2FEF5C00DD455F /* sprite object */ = {
 			isa = PBXGroup;
 			children = (
+				3F187C121A40059F0086613B /* red_bolt.png */,
 				3F187C101A3FED000086613B /* star_gold.png */,
 				3F187C0E1A3FEB710086613B /* power_blue.png */,
 				CAA5C4821A2FEF5C00DD455F /* Alien.png */,
@@ -535,6 +538,7 @@
 				5E49E08C1A3F74710047E7D2 /* F-777DoubleJump.mp3 in Resources */,
 				5E49E0821A3DFFB30047E7D2 /* Gameover1_1.png in Resources */,
 				3FACC6451A1E8CC6005A8C66 /* Main.storyboard in Resources */,
+				3F187C131A40059F0086613B /* red_bolt.png in Resources */,
 				5E49E0831A3DFFB30047E7D2 /* Gameover1.png in Resources */,
 				CA5F2E4C1A301B93006F9F56 /* groundRock2.png in Resources */,
 				CAA5C49D1A2FEF7600DD455F /* meteorite_6.png in Resources */,
