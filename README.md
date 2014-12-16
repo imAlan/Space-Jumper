@@ -17,11 +17,13 @@ George Lin
 
 Created on Fall 2014
 
-![Menu] (Menu.png)
+![Splash] (splash.png)
 
-![SpaceJumper_1] (SpaceJumper1.png)
+![Menu] (getready.png)
 
-![SpaceJumper_2] (SpaceJumper2.png)
+![SpaceJumper_1] (ingame1.png)
 
-![GameOver] (GameOver.png)
+![SpaceJumper_2] (ingame2.png)
+
+![GameOver] (gameover.png)
 
