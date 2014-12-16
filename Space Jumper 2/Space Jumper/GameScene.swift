@@ -170,7 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         jumper = JumperNode.instance();
         jumper!.position = CGPointMake(100, CGRectGetMidY(self.frame)/1.25);
         jumper!.name = "jumper";
-        jumper.setScale(0.3);
+        jumper.setScale(0.275);
         self.addChild(jumper!);
     }
     
@@ -269,6 +269,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         meteor.physicsBody?.dynamic = false
         var rotateMeteorite = SKAction.rotateByAngle(CGFloat(-M_PI/2.5 ), duration: 1.0)
         var rotateMeteoriteForever = SKAction.repeatActionForever(rotateMeteorite)
+        
         
         meteor.runAction(rotateMeteoriteForever)
         
@@ -501,7 +502,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             (contact.bodyA.node!.name! == "jumper" && contact.bodyB.node!.name! == "red_powerup"))
         {
             // powered up; make alien smaller
-            poweredUp = true
+            //poweredUp = true
             jumper.texture = SKTexture(imageNamed: "Pink_Alien")
             jumper.setScale(0.225)
             jumper.physicsBody?.dynamic = true
@@ -514,7 +515,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             (contact.bodyA.node!.name! == "jumper" && contact.bodyB.node!.name! == "blue_powerup"))
         {
             // powered up; make alien bigger
-            poweredUp = true
+            //poweredUp = true
             jumper.texture = SKTexture(imageNamed: "Blue_Alien")
             jumper.setScale(0.35)
             jumper.physicsBody?.dynamic = true
@@ -526,7 +527,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             ||
             (contact.bodyA.node!.name! == "jumper" && contact.bodyB.node!.name! == "star_gold"))
         {
-            currentScore += 100
+            currentScore += 300
             star.removeFromParent()
         }
         
@@ -589,9 +590,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 count = 0
             }
             //println(powerUpTimer)
-            if (powerUpTimer > 0){
-                powerUpTimer--
-            }
             
             if (boltTime > 0)
             {
@@ -601,12 +599,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             {
                 scaling = 1.0
             }
-        
-            if (powerUpTimer <= 0){
+            
+            if (powerUpTimer > 0)
+            {
+                powerUpTimer--
+            }
+            else
+            {
                 poweredUp = false
-                jumper.texture = SKTexture(imageNamed: "Alien")
-                jumper.physicsBody?.dynamic = true
-                //    jumper.setScale(0.4)
+                //jumper.texture = SKTexture(imageNamed: "Alien")
+                //jumper.physicsBody?.dynamic = true
+                jumper.setScale(0.275)
             }
         
             jumper.position.x = self.frame.size.width * 0.15
