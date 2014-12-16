@@ -254,7 +254,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         distanceToMove = CGFloat(self.frame.size.width + (1.0 * meteor.size.width))
         
         // randomize speed
-        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.004 * size_random * distanceToMove))
+        moveObject = SKAction.moveByX(-distanceToMove, y:0.0, duration: NSTimeInterval(0.0032 * size_random * distanceToMove))
         removeObject = SKAction.removeFromParent()
         objectMoveAndRemove = SKAction.sequence([moveObject, removeObject])
         
