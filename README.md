@@ -1,11 +1,15 @@
 Space-Jumper
 ============
 
-Swift iOS Game - Alien lost in space.
+Swift iOS Game - Alien lost in space
+
+Created on Fall 2014
 
 Tech Stack
 ==========
 Swift
+
+Kenney Art
 
 Team Members
 ============
@@ -15,7 +19,6 @@ Kong Huang
 
 George Lin
 
-Created on Fall 2014
 
 ![Splash] (splash.png)
 
@@ -25,5 +28,5 @@ Created on Fall 2014
 
 ![SpaceJumper_2] (ingame2.png)
 
-![GameOver] (gameover.png)
+![GameOver] (GameOver.png)
 
