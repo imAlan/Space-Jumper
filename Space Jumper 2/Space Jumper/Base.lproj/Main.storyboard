@@ -20,8 +20,8 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wiX-0V-DUg" userLabel="gameOverView">
                                 <rect key="frame" x="150" y="256" width="300" height="90"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gameover1_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gWE-kb-GFy" userLabel="gameOverImage">
-                                        <rect key="frame" x="20" y="0.0" width="260" height="45"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tGAMEOVER3.png" translatesAutoresizingMaskIntoConstraints="NO" id="gWE-kb-GFy" userLabel="gameOverImage">
+                                        <rect key="frame" x="20" y="0.0" width="382" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="JSo-Ze-nEh"/>
                                         </constraints>
@@ -54,8 +54,8 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrY-D7-oC7" userLabel="menuView">
                                 <rect key="frame" x="150" y="256" width="300" height="90"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getready1_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="WyC-nf-Kbh" userLabel="mainMenuImage">
-                                        <rect key="frame" x="20" y="0.0" width="260" height="45"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tGETREADY3.png" translatesAutoresizingMaskIntoConstraints="NO" id="WyC-nf-Kbh" userLabel="mainMenuImage">
+                                        <rect key="frame" x="20" y="0.0" width="347" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="3cQ-d7-Zvg"/>
                                         </constraints>
@@ -96,7 +96,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Gameover1_1.png" width="453" height="65"/>
-        <image name="getready1_2.png" width="441" height="65"/>
+        <image name="tGAMEOVER3.png" width="382" height="74"/>
+        <image name="tGETREADY3.png" width="347" height="76"/>
     </resources>
 </document>

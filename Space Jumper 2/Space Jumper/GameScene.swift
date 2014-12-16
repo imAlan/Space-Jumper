@@ -36,9 +36,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     weak var gameViewController:GameViewController!
     
     // numbers
-    let BACK1_SCROLLING_SPEED: CGFloat = 0.5
-    let BACK2_SCROLLING_SPEED: CGFloat = 1.5
-    let BACK3_SCROLLING_SPEED: CGFloat = 2.5
+    let BACK1_SCROLLING_SPEED: CGFloat = 2.5
+    let GROUND_SCROLLING_SPEED: CGFloat = 5.0
     var scaling = CGFloat(1.0)
     
     // counters
@@ -58,8 +57,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var back1: SKScrollingNode?
     var back2: SKScrollingNode?
     var jumpOffPad: SKSpriteNode!
-    var ground: SKSpriteNode!
-    var ground2: SKSpriteNode!
+    var ground: SKScrollingNode?
+    var ground2: SKScrollingNode?
     
     //Mini Hack
     //TODO: Use Array
@@ -122,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func initSetup(){
-        println("initial setup")
+        //println("initial setup")
         //Physics
         self.physicsWorld.gravity = CGVectorMake(CGFloat(0.0), CGFloat(-5.0))
 
@@ -144,11 +143,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupBackground(){
-        back1 = SKScrollingNode.scrollingNode("Space.jpg", containerWidth:self.frame.size.width, containerHeight:self.frame.size.height);
+        back1 = SKScrollingNode.scrollingNode("background.png", containerWidth:self.frame.size.width, containerHeight:self.frame.size.height);
         //self.setScale(2.0);
         back1!.scrollingSpeed = BACK1_SCROLLING_SPEED;
         back1!.anchorPoint = CGPointZero;
-        back1!.setScale(0.3)
+        back1!.setScale(1.0)
         self.addChild(self.back1!);
         
         // music
@@ -167,7 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupJumper(){
-        println("setup jumper")
+        //println("setup jumper")
         jumper = JumperNode.instance();
         jumper!.position = CGPointMake(100, CGRectGetMidY(self.frame)/1.25);
         jumper!.name = "jumper";
@@ -197,28 +196,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Lower Ground
         var groundTextureLower = SKTexture(imageNamed: "groundRock2")
         var groundTextureUpper = SKTexture(imageNamed: "groundRock")
-        ground = SKSpriteNode(texture: groundTextureLower)
-        ground.name = "ground"
-        ground.setScale(0.85)
-        self.addChild(ground)
-        ground.position = CGPointMake(CGRectGetMidX(self.frame), 0 - ground.size.height/6)
-        ground.physicsBody = SKPhysicsBody(rectangleOfSize: ground.size)
-        ground.physicsBody?.categoryBitMask = Constants.GROUND_BIT_MASK
-        ground.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
-        ground.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
-        ground.physicsBody?.dynamic = false
+        
+        ground = SKScrollingNode.scrollingNode("groundRock2.png", containerWidth: self.frame.size.width, containerHeight:self.frame.size.height) as SKScrollingNode;
+        ground!.anchorPoint = CGPointZero;
+        ground!.name = "ground"
+        ground!.scrollingSpeed = GROUND_SCROLLING_SPEED;
+        ground!.anchorPoint = CGPointZero;
+        ground!.setScale(0.8)
+        self.addChild(self.ground!)
+        
+        ground!.position = CGPointMake(0, -35)
+        ground!.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 2000, height: 115))
+        ground!.physicsBody?.categoryBitMask = Constants.GROUND_BIT_MASK
+        ground!.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
+        ground!.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
+        ground!.physicsBody?.dynamic = false
         
         // Upper Ground
-        ground2 = SKSpriteNode(texture: groundTextureUpper)
-        ground2.name = "ground"
-        ground2.setScale(0.85)
-        self.addChild(ground2)
-        ground2.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height + ground2.size.height/4)
-        ground2.physicsBody = SKPhysicsBody(rectangleOfSize: ground2.size)
-        ground2.physicsBody?.categoryBitMask = Constants.GROUND_BIT_MASK
-        ground2.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
-        ground2.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
-        ground2.physicsBody?.dynamic = false
+        ground2 = SKScrollingNode.scrollingNode("groundRock.png", containerWidth: self.frame.size.width, containerHeight:self.frame.size.height) as SKScrollingNode;
+        ground2!.name = "ground"
+        ground2!.scrollingSpeed = GROUND_SCROLLING_SPEED;
+        ground2!.setScale(0.8)
+        self.addChild(self.ground2!)
+        ground2!.position = CGPointMake(0, self.frame.size.height - 25)
+        ground2!.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 2000, height: 1))
+        ground2!.physicsBody?.categoryBitMask = Constants.GROUND_BIT_MASK
+        ground2!.physicsBody?.contactTestBitMask = Constants.JUMPER_BIT_MASK
+        ground2!.physicsBody?.collisionBitMask = Constants.JUMPER_BIT_MASK
+        ground2!.physicsBody?.dynamic = false
     }
     
     //Generating Meteorites
@@ -452,7 +457,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lastSpawn = 20
             spawnUFO()
         }
-        println("--\(lastSpawn)")
+        //println("--\(lastSpawn)")
     }
     
     func spawnPremadeType1(){
@@ -476,7 +481,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             ((contact.bodyA.node!.name! == "meteor" || contact.bodyA.node!.name! == "ufo" || contact.bodyA.node!.name! == "ground" ) && contact.bodyB.node!.name! == "jumper")
         )
         {
-            println("collision jumper")
+            //println("collision jumper")
             
             if(!jumperDeath) {
                 jumperDeath = true;
@@ -555,7 +560,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(currentTime: CFTimeInterval) {
-        println(scaling)
+        //println(scaling)
         /* Called before each frame is rendered */
         // spawn meteors every 5 frames
         //println(meteors)
@@ -565,12 +570,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(!jumperDeath && gameStarted) {
             back1!.update(currentTime);
+            ground!.update(currentTime);
+            ground2!.update(currentTime);
             jumper!.update(currentTime);
 
             if current_time == 0.0{
                 current_time = currentTime
             }
             diff_sec = Int((currentTime - current_time)/1.5)
+            
+            println(diff_sec)
         
             //println("limit: \(limit)  count: \(count)")
             count++
@@ -605,47 +614,47 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //Change number of spawn meteorites base on time
             if diff_sec < 5
             {
-                limit = 50
+                limit = 24
             }
             else if diff_sec < 10
             {
-                limit = 45
+                limit = 22
             }
             else if diff_sec < 15
             {
-                limit = 40
+                limit = 20
             }
             else if diff_sec < 20
             {
-                limit = 30
+                limit = 18
             }
             else if diff_sec < 25
             {
-                limit = 35
+                limit = 16
             }
             else if diff_sec < 30
             {
-                limit = 30
+                limit = 14
             }
             else if diff_sec < 35
             {
-                limit = 25
+                limit = 12
             }
             else if diff_sec < 40
             {
-                limit = 20
+                limit = 10
             }
             else if diff_sec < 45
             {
-                limit = 15
+                limit = 8
             }
             else if diff_sec < 50
             {
-                limit = 10
+                limit = 6
             }
             else
             {
-                limit = 8
+                limit = 4
             }
         }
     }
