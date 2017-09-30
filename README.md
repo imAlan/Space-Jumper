@@ -20,13 +20,13 @@ Kong Huang
 George Lin
 
 
-![Splash] (splash.png)
+![Splash](splash.png)
 
-![Menu] (getready.png)
+![Menu](getready.png)
 
-![SpaceJumper_1] (ingame1.png)
+![SpaceJumper_1](ingame1.png)
 
-![SpaceJumper_2] (ingame2.png)
+![SpaceJumper_2](ingame2.png)
 
-![GameOver] (GameOver.png)
+![GameOver](GameOver.png)
 
